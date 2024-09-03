@@ -6,12 +6,156 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>shop</title>
+    <title>cart</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container pt-5">
+        <div class="container mx-3">
+            <div class="cart_header d-flex mb-5 py-4 align-content-center w-100 justify-content-center">
+                <div class="cart-active">
+                    <span class="span_num rounded-circle">1</span>
+                    <strong>Shopping Cart</strong>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div>
+                    <span class="span_num rounded-circle">2</span>
+                    <strong>Checkout Detailst</strong>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div>
+                    <span class="span_num rounded-circle">3</span>
+                    <strong>Checkout Detailst</strong>
+                </div>
+            </div>
+        </div>
+        <table class="table mb-4" >
+            <thead class=" table-light text-dark">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="cartRows" class="">
+                
+            </tbody>
+            <!-- <tfoot>
+                <tr class="row" >
+                    <td class="col-md-6 col-sm-12 d-flex justify-content-start bg-danger" colspan="3">
+                        <input type="text" class="cupon_input p-2" placeholder="Coupon Code">
+                        <button class="btn text-center w-100 add_btn rounded-0 p-2 mx-2">Apply coupon</button>
+                    </td>
+                    <td class="col-md-6 col-sm-12 d-flex justify-content-start" colspan="3">
+                    </td>
+                </tr>
+            </tfoot> -->
+        </table>
+
+        <div class="row total_and_more my-5">
+            <div class="col-md-6 col-sm-12 p-3 pe-5 ">
+                <div class="bg-light">
+                    <h2 class="totalTitle p-3">You may be interested in ...</h2>
+                <div id="recomendProducts" class="row p-3">
+
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12  p-3 ps-5">
+                <div class=" bg-light w-100">
+                    <h2 class="totalTitle text-center p-3">Cart totals</h2>
+                    <div class="p-3">
+                        <table class="total table border">
+                            <tr  >
+                                <th class="total-text bg-transparent">Subtotal</th>
+                                <td id="total-sub" class="bg-transparent">$59</td>
+                            </tr>
+                            <tr>
+                                <th  class="total-text bg-transparent">Total</th>
+                                <th id="total-main" class="bg-transparent">$59</th>
+                            </tr>
+                        </table>
+                        <div class="w-100 d-flex align-items-center justify-content-end py-2">
+                            <button class="btn text-center add_btn rounded-0 p-2">Proceed to checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
+    
+    <footer class="footer pt-5  ">
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+                    <div class="inner_footer">
+                        <div class="footer-title-logo">
+                            <div class="footer-logo mb-4">
+                                <img src="images/logo-business-classic-footer.png" alt="">
+                            </div>
+                        </div>
+                        <p class=" mb-3 text-start">
+                            A company is any entity that engages in business. Companies can be structured in different ways. For example, your company can be a sole proprietorship, a partnership, or a corporation.
+                        </p>
+                        <div class="linkList">
+                            <a href="" class="iconLink facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="" class="iconLink twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="" class="iconLink instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="" class="iconLink linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="" class="iconLink youtube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+                    <div class="inner_footer">
+                        <div class="footer-title py-3">
+                            Recent Posts
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+                    <div class="inner_footer">
+                        <div class="footer-title py-3">
+                            Business Hours
+                        </div>
+                        <p class="my-3">
+                            Our support available to help you <span class="mark-font-main">24 hours</span> a day, seven days a week, <span class="mark-font-main">365 days</span> in year.
+                        </p>
+                        <ul class=" list-unstyled footer-list">
+                            <li><span>Monday to Friday</span> <span>8AM - 4PM</span></li>
+                            <li><span>Saturday</span> <span>8AM - 1PM</span></li>
+                            <li><span>Sunday</span> <span>Support by Email</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="downfooter py-3 mt-5">
+            <div class="container">
+                <div class="row  ">
+                    <div class="col-md-6 col-sm-12 left-footer text-start">
+                        <p>© Copyright 2024, Designed by XTRA Theme</p>
+                        
+                    </div>
+                    <div class="col-md-6 col-sm-12 right-fotter d-flex align-content-center justify-content-end ">  
+                        <div class="mybreadcrumb">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">About</a>
+                            <a href="" >Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scriptShop.js"></script>
 </body>

@@ -148,7 +148,7 @@
 .footer p {
     line-height: 2;
 }
-.footer *::selection{
+*::selection{
     background-color: var(--main-green);
     color: white;
 }
@@ -246,4 +246,95 @@
     right: -10px; 
     top: 50%;
     transform: translateY(-50%) rotate(20deg);
+}
+#cart th, #cart td{
+    border:  1px solid #c1c1c1;
+    padding-top: 15px ;
+    padding-bottom: 15px ;
+}
+.delete-td{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; */
+    position: relative;
+}
+.btn-delete{
+    border: none;
+    background-color: transparent;
+    /* font-size: 24px; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+.btn-delete:hover{
+    background-color: var(--wc-red) !important;
+    color: white !important;
+}
+#cart h5{
+    margin-top: 15%;
+}
+.img-td img{
+    max-width: 100px;
+}
+.cupon_input{
+    border: 1px solid var(--wp--preset--color--light-green-cyan);
+}
+.quantitiy .btn{
+    width: 40px ;
+    margin: 0 !important;
+}
+.quantitiy .btn:hover{
+    background-color: var(--main-green) !important;
+    color: white;
+    
+}
+.cart_header *{
+font-size: 27px;
+font-size: 300;
+
+}
+.cart_header strong{
+    font-weight: 400;
+}
+.cart_header {
+    color: var(--lt-color-gray-500);
+}
+.cart_header span{
+    background-color: var(--lt-color-gray-400);
+    color: white;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    font-size: 20px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-right:20px;
+}
+.cart_header i{
+    margin: 0px 30px;
+}
+.cart_header .cart-active{
+    color: var(--lt-color-black);
+}
+.cart_header .cart-active span{
+    background-color: var(--lt-color-black);
+    color: white;
+}
+
+.total_and_more .totalTitle{
+    background-color: var(--main-green);
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+#total-main{
+    font-size: 18px;
+    color: #000000;
+    font-weight: var(--fw-standerd);
+}
+.total *{
+    background-color: transparent !;
 }
