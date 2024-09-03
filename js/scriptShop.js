@@ -149,29 +149,6 @@ function displayProducts() {
     productsRows.innerHTML = cartona;
 }
 
-// function addToCart(product_id) {
-//     for (let i = 0 ; i<products.length; i++) {
-//         if (product_id == products[i].id){
-//             if (products[i].addedToCart == false){
-//                 products[i].addedToCart = true;
-//                 cart.push({
-//                     id: products[i].id,
-//                     name: products[i].name,
-//                     image: products[i].image,
-//                     price: products[i].price,
-//                     quantity: products[i].quantity,
-//                     getPrice: products[i].getPrice
-//                 });
-//                 localStorage.setItem("ex_products",JSON.stringify(products))
-//                 localStorage.setItem("cart_items", JSON.stringify(cart));
-//                 if (location.pathname == "/cart.html") {
-//                     displayCart();
-//                 }
-//             }
-//         }   
-//     }
-// }
-
 function addToCart(product_id) {
     for (let i = 0; i < products.length; i++) {
         if (product_id == products[i].id) {
@@ -205,29 +182,40 @@ function displayCart() {
     for (let i = 0; i < cart.length; i++) {
         box += `
                 <tr class="">
-                    <td class="delete-td p-3"><button class="btn-delete text-danger p-2 px-3 btn mt-4"><i class="fa-solid fa-xmark"></i></button></td>
-                    <td class="img-td p-3"><img src="images/${cart[i].image}" alt=""></td>
-                    <td class="Product-name-td p-3"><h5>${cart[i].name}</h5></td>
-                    <td class="Price-td p-3">$ ${cart[i].price}</td>
-                    <td class="Quantity-td p-3 ">
+                    <td class="delete-td p-3"><button class="btn-delete text-danger p-2 px-3 btn mt-4 border"><i class="fa-solid fa-xmark"></i></button></td>
+                    <td class="img-td p-3  border"><img src="images/${cart[i].image}" alt=""></td>
+                    <td class="Product-name-td p-3  border"><h5>${cart[i].name}</h5></td>
+                    <td class="Price-td p-3  border">$ ${cart[i].price}</td>
+                    <td class="Quantity-td p-3  border ">
                         <div class="quantitiy d-flex justify-content-center">
-                            <button class="btn btn-plus bg-light">-</button>
-                            <input type="text" class="q-input w-25 text-center" value = "${cart[i].quantity}">
-                            <button class="btn btn-mines bg-light">+</button>
+                            <button class="btn btn-plus bg-light" onclick = "quantityMines(${i})">-</button>
+                            <input type="text" class="q-input w-25 text-center" value="${cart[i].quantity}" onmouseleave = "quantityInputFormater()" >
+                            <button class="btn btn-mines bg-light" onclick = "quantityPlus(${i})">+</button>
                         </div>
                     </td>
-                    <td class="Subtotal-td p-3">$ ${cart[i].getPrice()}</td>
+                    <td class="Subtotal-td p-3  border">$ ${cart[i].getPrice()}</td>
                 </tr>
                 `;
     }
     cartRows.innerHTML = box;
 }
 
+function getTotal(){
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].getPrice()
+    }
+    totalMain.innerHTML = `$${total}`;
+    totalSub.innerHTML = `$${total}`;
+}
+
+console.log(getTotal());
+
 function displayRecomendProducts() {
     let cartona = "";
     for (let i = 0; i < recomendProducts.length; i++) {
         cartona +=`
-                <div class="col-sm-12 col-md-6 mb-2 mt-2">
+                <div class="col-sm-12 col-md-6 mb-2 mt-2 mb-sm-4">
                     <div class="product_box position-relative">
                         <div class="img_box mb-2 ">
                             <img src="images/${recomendProducts[i].image}" alt="" class=" w-100">
@@ -250,21 +238,70 @@ function displayRecomendProducts() {
 }
 
 const qInput = document.querySelectorAll(".q-input");
-console.log(qInput);
 
-qInput.forEach((e)=>{
-    e.addEventListener("keyup",(dosa)=>{
-        let nums = ["1","2","3","4","5","6","7","8","9","0"];
-        // console.log(dosa.key);
-        if (e.value.length <1) {
+function quantityInputFormater() {
+    let nums = ["1","2","3","4","5","6","7","8","9","0"];
+    let gojo = (e)=>{
+        if (e.value == "NaN") {
             e.value = 1
         }
-        if (!nums.includes(dosa.key)) {
-            e.value = parseInt(e.value)
-            
+        if (e.value.length <1) {
+            this.value = 1
         }
-        
-    })
-    // console.log(e);
-    
-})
+        // if (!nums.includes(this.key)) {
+        // }  
+        e.value = parseInt(e.value)   
+    }
+    gojo()
+}
+
+function test() {
+    qInput.forEach((e)=>{
+        e.addEventListener("keyup",(dosa)=>{
+            let nums = ["1","2","3","4","5","6","7","8","9","0"];
+            if (e.value == "NaN") {
+                e.value = 1
+            }
+            if (e.value.length <1) {
+                e.value = 1
+            }
+            if (!nums.includes(dosa.key)) {
+                e.value = parseInt(e.value)   
+            }  
+        })    
+    });
+}
+
+test();
+
+// qInput.forEach((e)=>{
+//     e.addEventListener("keyup",(dosa)=>{
+//         let nums = ["1","2","3","4","5","6","7","8","9","0"];
+//         if (e.value == "NaN") {
+//             e.value = 1
+//         }
+//         if (e.value.length <1) {
+//             e.value = 1
+//         }
+//         if (!nums.includes(dosa.key)) {
+//             e.value = parseInt(e.value)   
+//         }  
+//     })    
+// });
+
+function quantityPlus(count) {
+    cart[count].quantity ++;
+    localStorage.setItem("cart_items", JSON.stringify(cart));
+    displayCart();
+    test()
+    getTotal()
+}
+function quantityMines(count) {
+    if (cart[count].quantity >=2) {
+        cart[count].quantity --;
+    }
+    localStorage.setItem("cart_items", JSON.stringify(cart));
+    displayCart();
+    test()
+    getTotal()
+}

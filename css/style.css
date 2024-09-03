@@ -285,6 +285,8 @@
     color: var(--main-green);
     width: 40px ;
     margin: 0 !important;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .quantitiy .btn:hover{
     background-color: var(--main-green) !important;
@@ -338,4 +340,7 @@ font-size: 300;
 }
 .total *{
     background-color: transparent !;
+}
+.table thead tr th{
+    border: 1px solid var(--lt-color-gray-300);
 }
