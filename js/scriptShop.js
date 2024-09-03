@@ -1,9 +1,15 @@
 const productsRows = document.querySelector("#productsRows");
 const cartRows = document.querySelector("#cartRows");
-const recomend = document.querySelector("#recomendProducts")
+const recomend = document.querySelector("#recomendProducts");
+const totalMain = document.querySelector("#total-main");
+const totalSub = document.querySelector("#total-sub");
 
 let cart = JSON.parse(localStorage.getItem("cart_items")) || [];
-
+cart.forEach(item => {
+    item.getPrice = function() {
+        return this.quantity * this.price;
+    };
+});
 let products = JSON.parse(localStorage.getItem("ex_products")) || [
     {
         name: "package1",
@@ -11,9 +17,9 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 34,
         addedToCart: false,
         id: 1,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     },
     {
@@ -22,9 +28,9 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 20,
         addedToCart: false,
         id: 2,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     },
     {
@@ -33,9 +39,9 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 40,
         addedToCart: false,
         id: 3,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     },
     {
@@ -44,9 +50,9 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 23,
         addedToCart: false,
         id: 4,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     },
     {
@@ -55,9 +61,9 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 39,
         addedToCart: false,
         id: 5,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     },
     {
@@ -66,9 +72,9 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 57,
         addedToCart: false,
         id: 6,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     },
     {
@@ -77,44 +83,50 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         price: 84,
         addedToCart: false,
         id: 7,
-        quantity: 1, 
+        quantity: 1,
         getPrice: function() {
-            return this.quantity * this.price; 
+            return this.quantity * this.price;
         }
     }
 ];
 
-let recomendProducts = JSON.parse(localStorage.getItem("recomendProducst")) || [
+let recomendProducts = JSON.parse(localStorage.getItem("recomendProducts")) || [
     {
-        name: "super Pakege",
+        name: "super Package",
         image: "package7.jpg",
         price: 104,
         addedToCart: false,
         id: 10,
-        quantitiy:1,
-        getPrice : function() {
-            return this.quantitiy * this.price
+        quantity: 1,
+        getPrice: function() {
+            return this.quantity * this.price;
         }
     },
     {
-        name: "ultimtPakege",
+        name: "ultimate Package",
         image: "package8.jpg",
         price: 234,
         addedToCart: false,
         id: 20,
-        quantitiy:1,
-        getPrice : function(){
-            return this.quantitiy * this.price
+        quantity: 1,
+        getPrice: function() {
+            return this.quantity * this.price;
         }
     }
-]
-console.log(location.pathname);
+];
 
 if (location.pathname == "/shop.html") {
-    function displayProducts() {
-        let cartona = "";
-        for (let i = 0 ; i<products.length; i++) {
-            cartona +=`
+    displayProducts();
+}
+if (location.pathname == "/cart.html") {
+    displayCart();
+    displayRecomendProducts();
+}
+
+function displayProducts() {
+    let cartona = "";
+    for (let i = 0; i < products.length; i++) {
+        cartona +=`
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-5 mt-2">
                     <div class="product_box position-relative">
                         <div class="img_box mb-2 ">
@@ -133,82 +145,88 @@ if (location.pathname == "/shop.html") {
                     </div>
                 </div>
             `;
-        }
-        productsRows.innerHTML = cartona;
     }
-    displayProducts();
+    productsRows.innerHTML = cartona;
 }
 
-function addToCart(prodcut_id) {
-    console.log(products);
-    
-    for (let i = 0 ; i<products.length; i++) {
-        if (prodcut_id == products[i].id) {
+// function addToCart(product_id) {
+//     for (let i = 0 ; i<products.length; i++) {
+//         if (product_id == products[i].id){
+//             if (products[i].addedToCart == false){
+//                 products[i].addedToCart = true;
+//                 cart.push({
+//                     id: products[i].id,
+//                     name: products[i].name,
+//                     image: products[i].image,
+//                     price: products[i].price,
+//                     quantity: products[i].quantity,
+//                     getPrice: products[i].getPrice
+//                 });
+//                 localStorage.setItem("ex_products",JSON.stringify(products))
+//                 localStorage.setItem("cart_items", JSON.stringify(cart));
+//                 if (location.pathname == "/cart.html") {
+//                     displayCart();
+//                 }
+//             }
+//         }   
+//     }
+// }
+
+function addToCart(product_id) {
+    for (let i = 0; i < products.length; i++) {
+        if (product_id == products[i].id) {
             if (products[i].addedToCart == false) {
-                let addedproduct = {
+                products[i].addedToCart = true;
+
+                // Push a new object to the cart with the getPrice method
+                cart.push({
+                    id: products[i].id,
                     name: products[i].name,
                     image: products[i].image,
                     price: products[i].price,
-                    addedToCart: true,
-                    id: products[i].id,
-                    quantity: products[i].quantity, 
-                    getPrice: function() {
-                        return this.quantity * this.price; 
-                    }
+                    quantity: products[i].quantity,
+                    getPrice: products[i].getPrice // Ensure this is a reference to the function
+                });
+
+                localStorage.setItem("ex_products", JSON.stringify(products));
+                localStorage.setItem("cart_items", JSON.stringify(cart));
+
+                // Update the cart display if on the cart page
+                if (location.pathname == "/cart.html") {
+                    displayCart();
                 }
-                // cart.push(products[i]);
-                // cart.push(products[i]);
-                cart.push(addedproduct);
-                products[i].addedToCart = true;
-                console.log("added");
-            }
-            else{
-                console.log("allready added");
             }
         }
     }
-    console.log(products);
-    localStorage.setItem("cart_items" ,JSON.stringify(cart))
-    localStorage.setItem("ex_products",JSON.stringify(products))
 }
 
-if (location.pathname == "/cart.html") {
-    function dispalyCart() {
-        let box = "";
-        if (cart != null) {
-            for (let i = 0; i < cart.length; i++) {
-                box += `
-                        <tr class="">
-                            <td class="delete-td p-3"><button class="btn-delete text-danger p-2 px-3 btn mt-4"><i class="fa-solid fa-xmark"></i></button></td>
-                            <td class="img-td p-3"><img src="images/${cart[i].image}" alt=""></td>
-                            <td class="Product-name-td p-3"><h5>${cart[i].name}</h5></td>
-                            <td class="Price-td p-3">$ ${cart[i].price}</td>
-                            <td class="Quantity-td p-3 ">
-                                <div class="quantitiy d-flex justify-content-center">
-                                    <button class="btn btn-plus bg-light">-</button>
-                                    <input type="text" class="q-input w-25 text-center" value = "${cart[i].quantity}">
-                                    <button class="btn btn-mines bg-light">+</button>
-                                </div>
-                            </td>
-                            <td class="Subtotal-td p-3">$ }</td>
-                        </tr>
+function displayCart() {
+    let box = "";
+    for (let i = 0; i < cart.length; i++) {
+        box += `
+                <tr class="">
+                    <td class="delete-td p-3"><button class="btn-delete text-danger p-2 px-3 btn mt-4"><i class="fa-solid fa-xmark"></i></button></td>
+                    <td class="img-td p-3"><img src="images/${cart[i].image}" alt=""></td>
+                    <td class="Product-name-td p-3"><h5>${cart[i].name}</h5></td>
+                    <td class="Price-td p-3">$ ${cart[i].price}</td>
+                    <td class="Quantity-td p-3 ">
+                        <div class="quantitiy d-flex justify-content-center">
+                            <button class="btn btn-plus bg-light">-</button>
+                            <input type="text" class="q-input w-25 text-center" value = "${cart[i].quantity}">
+                            <button class="btn btn-mines bg-light">+</button>
+                        </div>
+                    </td>
+                    <td class="Subtotal-td p-3">$ ${cart[i].getPrice()}</td>
+                </tr>
                 `;
-            }
-            console.log(cart);
-            
-        }
-        else{
-            console.log("cart = null");
-        }
-        cartRows.innerHTML = box;
     }
+    cartRows.innerHTML = box;
+}
 
-    dispalyCart();
-
-    function displayrecomendProducts() {
-        let cartona = "";
-        for (let i = 0 ; i<recomendProducts.length; i++) {
-            cartona +=`
+function displayRecomendProducts() {
+    let cartona = "";
+    for (let i = 0; i < recomendProducts.length; i++) {
+        cartona +=`
                 <div class="col-sm-12 col-md-6 mb-2 mt-2">
                     <div class="product_box position-relative">
                         <div class="img_box mb-2 ">
@@ -227,10 +245,26 @@ if (location.pathname == "/cart.html") {
                     </div>
                 </div>
             `;
-        }
-        recomend.innerHTML = cartona;
     }
-
-    displayrecomendProducts()
+    recomend.innerHTML = cartona;
 }
 
+const qInput = document.querySelectorAll(".q-input");
+console.log(qInput);
+
+qInput.forEach((e)=>{
+    e.addEventListener("keyup",(dosa)=>{
+        let nums = ["1","2","3","4","5","6","7","8","9","0"];
+        // console.log(dosa.key);
+        if (e.value.length <1) {
+            e.value = 1
+        }
+        if (!nums.includes(dosa.key)) {
+            e.value = parseInt(e.value)
+            
+        }
+        
+    })
+    // console.log(e);
+    
+})

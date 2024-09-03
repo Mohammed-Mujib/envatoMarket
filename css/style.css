@@ -282,6 +282,7 @@
     border: 1px solid var(--wp--preset--color--light-green-cyan);
 }
 .quantitiy .btn{
+    color: var(--main-green);
     width: 40px ;
     margin: 0 !important;
 }
