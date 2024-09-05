@@ -103,6 +103,7 @@
     --fw-standerd : 700;
     --fs-reg:1rem;
 }
+
 .container .row .img_box{
     border: 1px solid var(--wp--preset--color--light-green-cyan);
     border-top: 2px solid var(--wp--preset--color--light-green-cyan);
@@ -261,7 +262,7 @@
 }
 .btn-delete{
     border: none;
-    background-color: transparent;
+    background-color: white;
     /* font-size: 24px; */
     /* position: absolute;
     top: 50%;
@@ -271,6 +272,8 @@
 .btn-delete:hover{
     background-color: var(--wc-red) !important;
     color: white !important;
+    border-color: var(--wc-red) !important;
+    outline: none !important;
 }
 #cart h5{
     margin-top: 15%;
@@ -278,6 +281,10 @@
 .img-td img{
     max-width: 100px;
 }
+/* .img-cart img{
+    width: 100%;
+
+} */
 .cupon_input{
     border: 1px solid var(--wp--preset--color--light-green-cyan);
 }
@@ -346,16 +353,47 @@ font-size: 300;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
-
+#cartRowsRow .q-input{
+    outline: none;
+    /* border-color:  var(--wp--preset--color--light-green-cyan); */
+    border :1px solid var(--wp--preset--color--light-green-cyan) !important;
+}
+#cartRowsRow .q-input:focus{
+    border-color: var(--main-green) !important;
+}
 /* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+/* input[type=number] {
+    -moz-appearance: textfield;
+} */
 .no-spinners {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+.bg-main{
+    background-color: var(--main-green);
+}
+@media (max-width:769px) {
+    .w-sm-100{
+        width: 100% !important;
+    }
+    .row_header_caer{
+        display: none !important;
+    }
+    .btn-delete{
+        position: static !important;
+        margin-left: auto !important;
+        top: auto !important;
+        left: auto !important;
+        transform: translate(0%,0%) !important;
+    }
+    #cartRowsRow > div{
+        margin-bottom: 30px !important;
+    }
+    .border-b-sm{
+        border-bottom: 10px solid var(--main-green) !important;
+    }
 }

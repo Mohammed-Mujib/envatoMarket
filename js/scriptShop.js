@@ -3,6 +3,7 @@ const cartRows = document.querySelector("#cartRows");
 const recomend = document.querySelector("#recomendProducts");
 const totalMain = document.querySelector("#total-main");
 const totalSub = document.querySelector("#total-sub");
+const cartRowsRow = document.querySelector("#cartRowsRow");
 
 let cart = JSON.parse(localStorage.getItem("cart_items")) || [];
 
@@ -232,6 +233,63 @@ function displayCart() {
     cartRows.innerHTML = box;
     getTotal()
 }
+function displayCart() {
+    let box = "";
+    for (let i = 0; i < cart.length; i++) {
+        box += `
+                <div class="col-12 row border p-sm-2 align-content-center mx-auto mb-sm-3 bg-main my-md-0 border-b-sm">
+                    <div class="col-sm-12 col-md-1  delete-td p-3 d-flex justify-content-center align-content-center position-relative ">
+                        <button class="btn-delete text-danger p-2 px-3 btn  border position-absolute top-50 start-50 translate-middle" onclick = "deleteFromCart(${i})">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="col-sm-12 col-md-3 bg-white img-cart p-3  border ">
+                        <img src="images/${cart[i].image}" class="w-50 w-sm-100" alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-2 bg-white Product-name-td p-3  border d-flex align-items-center">
+                        <span class=" me-2 fw-bold d-md-none">name: </span>
+                        <h5 class="m-0 fw-normal">${cart[i].name}</h5>
+                    </div>
+                    <div class="col-sm-12 col-md-1 bg-white Price-td p-3 border d-flex align-items-center">
+                        <span class=" me-2 fw-bold d-md-none">Price: </span>
+                        $${cart[i].price}
+                    </div>
+                    <div class="col-sm-12 col-md-3 bg-white Quantity-td p-3 border d-flex align-items-center justify-content-center">
+                        <span class=" me-2 fw-bold d-md-none">Quantity: </span>
+                        <div class="quantitiy d-flex  justify-content-center">
+                            <button class="btn btn-plus bg-light m-2" onclick="quantityMines(${i})">-</button>
+                            <input type="number" class="q-input w-25 text-center no-spinners mx-2" value="${cart[i].quantity}"  >
+                            <button class="btn btn-mines bg-light mt-2" onclick="quantityPlus(${i})">+</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-2 bg-white Subtotal-td p-3 border d-flex align-items-center ">
+                        <span class=" me-2 fw-bold d-md-none">Suptotal: </span>
+                        $${cart[i].getPrice()}
+                    </div>
+                </div>
+                `;
+    }
+    let boxheader = `
+                <div class="col-12 row border p-sm-2 align-content-center mx-auto bg-main pb-sm-2 row_header_caer rounded-top mb-0">
+                    <div class="col-sm-12 col-md-1 bg-white  delete-td p-1 d-flex justify-content-center align-content-center position-relative "></div>
+                    <div class="col-sm-12 col-md-3 bg-white img-cart p-1  border "></div>
+                    <div class="col-sm-12 col-md-2 bg-white Product-name-td p-1  border d-flex align-items-center">
+                        <p class="mb-0 fw-bold ms-2">Product</p>
+                    </div>
+                    <div class="col-sm-12 col-md-1 bg-white Price-td p-1  border d-flex align-items-center">
+                        <p class="mb-0 fw-bold ms-2">Price</p>
+                    </div>
+                    <div class="col-sm-12 col-md-3 bg-white Quantity-td p-1  border d-flex align-items-center">
+                        <p class="mb-0 fw-bold ms-2">Quantity</p>
+                    </div>
+                    <div class="col-sm-12 col-md-2 bg-white Subtotal-td p-1  border d-flex align-items-center">
+                        <p class="mb-0 fw-bold ms-2">Subtotal</p>
+                    </div>
+                </div>
+    `; 
+    cartRowsRow.innerHTML = boxheader + box;
+    getTotal()
+}
 
 // will update the value of the total
 function getTotal(){
@@ -270,6 +328,7 @@ function displayRecomendProducts() {
     recomend.innerHTML = cartona;
 }
 
+//FIXME:
 const qInput = document.querySelectorAll(".q-input");
 
 // function quantityInputFormater() {

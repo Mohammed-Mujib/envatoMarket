@@ -11,7 +11,7 @@
 <body>
     <div class="container pt-5">
         <div class="container mx-3">
-            <div class="cart_header d-flex mb-5 py-4 align-content-center w-100 justify-content-center d-lg-flex d-sm-none d-md-none">
+            <div class="cart_header d-flex mb-5 py-4 align-content-center w-100 justify-content-center d-md-flex d-none">
                 <div class="cart-active">
                     <span class="span_num rounded-circle">1</span>
                     <strong>Shopping Cart</strong>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <table class="table mb-4 border" >
+        <!-- <table class="table mb-4 border" >
             <thead class=" table-light text-dark">
                 <tr>
                     <th></th>
@@ -46,7 +46,7 @@
             <tbody id="cartRows" class="">
                 
             </tbody>
-            <!-- <tfoot>
+            <tfoot>
                 <tr class="row" >
                     <td class="col-md-6 col-sm-12 d-flex justify-content-start bg-danger" colspan="3">
                         <input type="text" class="cupon_input p-2" placeholder="Coupon Code">
@@ -55,9 +55,11 @@
                     <td class="col-md-6 col-sm-12 d-flex justify-content-start" colspan="3">
                     </td>
                 </tr>
-            </tfoot> -->
-        </table>
+            </tfoot>
+        </table> -->
+        <div class="row " id="cartRowsRow">
 
+        </div>
         <div class="row total_and_more my-5 g-4">
             <div class="col-md-6 col-sm-12 p-md-3 pe-md-5 pe-sm-3">
                 <div class="bg-light">
@@ -88,7 +90,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
     
     <footer class="footer pt-5  ">
@@ -156,8 +157,8 @@
             
         </div>
     </footer>
+    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scriptShop.js"></script>
 </body>
 </html>
-<input type="text " value="" >
