@@ -344,3 +344,18 @@ font-size: 300;
 .table thead tr th{
     border: 1px solid var(--lt-color-gray-300);
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.no-spinners {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
