@@ -376,6 +376,24 @@ input[type="number"]::-webkit-inner-spin-button {
 .bg-main{
     background-color: var(--main-green);
 }
+.successAnime{
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s !important;
+    /* max-width: 400px; */
+}
+.successMark{
+    background-color: #00d084;
+    font-size: 24px;
+}
+/* .successIfno{
+    
+    transform: rotateY(10deg);
+    transform-origin: left 0%;
+    background-color: #0077B5;
+    transform-style: preserve-3d;
+} */
 @media (max-width:769px) {
     .w-sm-100{
         width: 100% !important;
@@ -395,5 +413,11 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .border-b-sm{
         border-bottom: 10px solid var(--main-green) !important;
+    }
+    .successAnime{
+        width: 95% !important;
+    }
+    .successAnime p {
+        font-size: 15px;
     }
 }

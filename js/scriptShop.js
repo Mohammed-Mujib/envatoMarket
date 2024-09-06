@@ -180,8 +180,9 @@ function addToCart(product_id) {
     
                     localStorage.setItem("recomendProducts", JSON.stringify(recomendProducts));
                     localStorage.setItem("cart_items", JSON.stringify(cart));
-                    addGetPrice()
+                    addGetPrice();
                     displayCart();
+                    successpopup();
                 }
             }
         }
@@ -202,6 +203,7 @@ function addToCart(product_id) {
                     });
                     localStorage.setItem("ex_products", JSON.stringify(products));
                     localStorage.setItem("cart_items", JSON.stringify(cart));
+                    successpopup();
                 }
             }
         }
@@ -210,29 +212,29 @@ function addToCart(product_id) {
 }
 
 // display the products in the cart page
-function displayCart() {
-    let box = "";
-    for (let i = 0; i < cart.length; i++) {
-        box += `
-                <tr class="">
-                    <td class="delete-td p-3"><button class="btn-delete text-danger p-2 px-3 btn mt-4 border" onclick = "deleteFromCart(${i})"><i class="fa-solid fa-xmark"></i></button></td>
-                    <td class="img-td p-3  border"><img src="images/${cart[i].image}" alt=""></td>
-                    <td class="Product-name-td p-3  border"><h5>${cart[i].name}</h5></td>
-                    <td class="Price-td p-3  border">$ ${cart[i].price}</td>
-                    <td class="Quantity-td p-3  border ">
-                        <div class="quantitiy d-flex justify-content-center">
-                            <button class="btn btn-plus bg-light" onclick = "quantityMines(${i})">-</button>
-                            <input type="number" class="q-input w-25 text-center no-spinners" value="${cart[i].quantity}"  >
-                            <button class="btn btn-mines bg-light" onclick = "quantityPlus(${i})">+</button>
-                        </div>
-                    </td>
-                    <td class="Subtotal-td p-3  border">$ ${cart[i].getPrice()}</td>
-                </tr>
-                `;
-    }
-    cartRows.innerHTML = box;
-    getTotal()
-}
+// function displayCart() {
+//     let box = "";
+//     for (let i = 0; i < cart.length; i++) {
+//         box += `
+//                 <tr class="">
+//                     <td class="delete-td p-3"><button class="btn-delete text-danger p-2 px-3 btn mt-4 border" onclick = "deleteFromCart(${i})"><i class="fa-solid fa-xmark"></i></button></td>
+//                     <td class="img-td p-3  border"><img src="images/${cart[i].image}" alt=""></td>
+//                     <td class="Product-name-td p-3  border"><h5>${cart[i].name}</h5></td>
+//                     <td class="Price-td p-3  border">$ ${cart[i].price}</td>
+//                     <td class="Quantity-td p-3  border ">
+//                         <div class="quantitiy d-flex justify-content-center">
+//                             <button class="btn btn-plus bg-light" onclick = "quantityMines(${i})">-</button>
+//                             <input type="number" class="q-input w-25 text-center no-spinners" value="${cart[i].quantity}"  >
+//                             <button class="btn btn-mines bg-light" onclick = "quantityPlus(${i})">+</button>
+//                         </div>
+//                     </td>
+//                     <td class="Subtotal-td p-3  border">$ ${cart[i].getPrice()}</td>
+//                 </tr>
+//                 `;
+//     }
+//     cartRows.innerHTML = box;
+//     getTotal()
+// }
 function displayCart() {
     let box = "";
     for (let i = 0; i < cart.length; i++) {
@@ -258,7 +260,7 @@ function displayCart() {
                         <span class=" me-2 fw-bold d-md-none">Quantity: </span>
                         <div class="quantitiy d-flex  justify-content-center">
                             <button class="btn btn-plus bg-light m-2" onclick="quantityMines(${i})">-</button>
-                            <input type="number" class="q-input w-25 text-center no-spinners mx-2" value="${cart[i].quantity}"  >
+                            <input type="number" class="q-input w-25 text-center no-spinners mx-2" value="${cart[i].quantity}" onkeyup= "quantitytybe(${i})" >
                             <button class="btn btn-mines bg-light mt-2" onclick="quantityPlus(${i})">+</button>
                         </div>
                     </div>
@@ -271,18 +273,18 @@ function displayCart() {
     }
     let boxheader = `
                 <div class="col-12 row border p-sm-2 align-content-center mx-auto bg-main pb-sm-2 row_header_caer rounded-top mb-0">
-                    <div class="col-sm-12 col-md-1 bg-white  delete-td p-1 d-flex justify-content-center align-content-center position-relative "></div>
-                    <div class="col-sm-12 col-md-3 bg-white img-cart p-1  border "></div>
-                    <div class="col-sm-12 col-md-2 bg-white Product-name-td p-1  border d-flex align-items-center">
+                    <div class="col-sm-12 col-md-1 bg-light  delete-td p-1 d-flex justify-content-center align-content-center position-relative "></div>
+                    <div class="col-sm-12 col-md-3 bg-light img-cart p-1  border "></div>
+                    <div class="col-sm-12 col-md-2 bg-light Product-name-td p-1  border d-flex align-items-center">
                         <p class="mb-0 fw-bold ms-2">Product</p>
                     </div>
-                    <div class="col-sm-12 col-md-1 bg-white Price-td p-1  border d-flex align-items-center">
+                    <div class="col-sm-12 col-md-1 bg-light Price-td p-1  border d-flex align-items-center">
                         <p class="mb-0 fw-bold ms-2">Price</p>
                     </div>
-                    <div class="col-sm-12 col-md-3 bg-white Quantity-td p-1  border d-flex align-items-center">
+                    <div class="col-sm-12 col-md-3 bg-light Quantity-td p-1  border d-flex align-items-center">
                         <p class="mb-0 fw-bold ms-2">Quantity</p>
                     </div>
-                    <div class="col-sm-12 col-md-2 bg-white Subtotal-td p-1  border d-flex align-items-center">
+                    <div class="col-sm-12 col-md-2 bg-light Subtotal-td p-1  border d-flex align-items-center">
                         <p class="mb-0 fw-bold ms-2">Subtotal</p>
                     </div>
                 </div>
@@ -366,7 +368,17 @@ function test() {
     });
 }
 
-// test();
+function quantitytybe(count){
+    if (qInput[count].value.length <1) {
+        qInput[count].value = 1
+    }
+    cart[count].quantity = qInput[count].value;
+    displayCart()
+    getTotal()
+    localStorage.setItem("cart_items", JSON.stringify(cart));
+    console.log(cart[count]);
+    
+}
 
 /*qInput.forEach((e)=>{
     e.addEventListener("keyup",(dosa)=>{
@@ -388,7 +400,7 @@ function quantityPlus(count) {
     cart[count].quantity ++;
     localStorage.setItem("cart_items", JSON.stringify(cart));
     displayCart();
-    test()
+    
     getTotal()
 }
 
@@ -399,7 +411,6 @@ function quantityMines(count) {
     }
     localStorage.setItem("cart_items", JSON.stringify(cart));
     displayCart();
-    test()
     getTotal()
 }
 
@@ -423,3 +434,23 @@ function deleteFromCart(count) {
     localStorage.setItem("cart_items", JSON.stringify(cart));    
     displayCart()
 }
+
+
+function successpopup() {
+    let successAnime = document.querySelector(".successAnime");
+    successAnime.classList.toggle("d-none") 
+    setTimeout(()=>{
+        successAnime.classList.toggle("opacity-0") 
+    },1000)
+    setTimeout(()=>{
+        successAnime.classList.toggle("opacity-0") 
+        setTimeout(()=>{
+            successAnime.classList.toggle("d-none") 
+        },2000)
+    },3500)
+}
+// let showCArtbtn = document.querySelector("#howbtn");
+// showCArtbtn.addEventListener("click",()=>{
+
+//     location.assign(`/cart.html`)
+// })
