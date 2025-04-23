@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>E-Commerce Website</title>
+</head>
+
+<body>
+  <!-- Header (Home) -->
+  <header class="home" id="home">
+    <section class="home-info bg-body-secondary">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Connect -->
+          <div class="connect col-12 col-md-6 col-lg-9 pt-sm-2 pt-md-0">
+            <span>
+              <i class="fa-solid fa-phone-volume"></i>
+              <a href="tel:++1 (123) 45 67" class="text-decoration-none">+1 (123) 45 67</a>
+            </span>
+            <span class="mx-4">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:890info@site.comMy" class="text-decoration-none">890info@site.comMy</a>
+            </span>
+            <span>
+              <i class="fa-solid fa-user"></i>
+              <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                My Account</a>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="loginFromModal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content p-4">
+                    <div class="modal-header border-0">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body position-relative">
+                      <!-- Login Form -->
+                      <div class="loginForm">
+                        <h1 class="modal-title text-center mb-5 text-black fs-3" id="loginFromModal">Login to website
+                        </h1>
+                        <form action="#" method="post">
+                          <input class="w-100 py-2 p-3" type="text" name="username" placeholder="Username" required>
+                          <input class="w-100 py-2 p-3 my-3" type="password" name="password" placeholder="Password"
+                            required>
+                          <input class="w-100 py-2 p-3" type="number" name="testHuman" placeholder="4 + 4 ?" required>
+                          <button type="submit" class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Login Now</button>
+                          <a href="#" class="showRecoverForm btn fit m-auto d-block">Forgot your password? Get help</a>
+                          <a href="#" class="showRegisterForm btn fit m-auto d-block">Not registered? Create an
+                            account</a>
+                        </form>
+                      </div>
+                      <!-- Register Form -->
+                      <div class="registerForm position-absolute w-100 h-100 z-n1 bg-white top-0 px-4 start-0">
+                        <h1 class="modal-title text-center mb-5 text-black fs-3">Registration from</h1>
+                        <form action="#" method="post">
+                          <input class="w-100 py-2 p-3 mb-3" type="text" name="username" placeholder="Username"
+                            required>
+                          <input class="w-100 py-2 p-3" type="email" name="email" placeholder="Your Email" required>
+                          <input class="w-100 py-2 p-3 my-3" type="password" name="password" placeholder="Password"
+                            required>
+                          <input class="w-100 py-2 p-3" type="number" name="testHuman" placeholder="8 + 6 ?" required>
+                          <button type="submit" class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Signup Now</button>
+                          <a href="#" class="showLoginForm btn fit m-auto d-block">Already registered? Sign In</a>
+                        </form>
+                      </div>
+                      <!-- Recovery Form -->
+                      <div class="recoveryForm position-absolute w-100 h-100 z-n1 bg-white top-0 px-4 start-0">
+                        <h1 class="modal-title text-center mb-5 text-black fs-3">Password recovery!</h1>
+                        <form action="#" method="post">
+                          <input class="w-100 py-2 p-3" type="email" name="email" placeholder="Your Email" required>
+                          <input class="w-100 py-2 p-3 mt-3" type="number" name="testHuman" placeholder="10 + 7 ?"
+                            required>
+                          <button type="submit" class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Send my
+                            password</button>
+                          <a href="#" class="showLoginForm btn fit m-auto d-block">Already registered? Sign In</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <!-- Social Links -->
+          <div class="social-links ms-md-auto">
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-skype"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="../images/logo-business-classic.png" alt="Logo" class="w-100">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse rounded-3 bg-white" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown mx-lg-2">
+              <a class="nav-link d-lg-flex mx-lg-4 dropdown-toggle" href="./pages/about.html" role="button"
+                aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu bg-color">
+                <li><a class="dropdown-item text-white" href="#">Submenu 1</a></li>
+                <li><a class="dropdown-item text-white" href="#">Submenu 2</a></li>
+                <li><a class="dropdown-item text-white" href="#">Submenu 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" href="./pages/services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex mx-lg-4" href="./pages/faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" href="pages/blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex mx-lg-4" href="pages/shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" href="pages/contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5 d-lg-flex mx-lg-4" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5 d-lg-flex" href="pages/cart.html">
+                <i class="fa-solid fa-bag-shopping position-relative">
+                  <span id="numProducts">0</span>
+                </i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Slide -->
+    <div id="homeSlide" class="carousel slide position-relative" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Carousel Item -->
+        <div class="carousel-item active position-relative" id="slide-1">
+          <div class="layer position-absolute top-0 end-0 bg-color h-100"></div>
+          <div class="content position-absolute top-50 translate-middle-y shadow p-5 bg-white">
+            <p class="text-uppercase fs-4">We are expert in</p>
+            <h2 class="text-uppercase main-color fs-1">Business solution</h2>
+            <p class="text-black-50 fs-5 mb-5 mt-4 d-none d-lg-block">
+              We are always looking for a challenge no matter what industry you are in. We have expertise in every
+              aspect of business
+              from complete start up to comprehensive marketing plans, human resources and governmental regulations.
+            </p>
+            <a href="pages/about.html" id="moreInfoBtn"
+              class="info-btn d-none d-lg-block btn fs-5 px-4 rounded-0 py-3">Find More
+              Information</a>
+          </div>
+        </div>
+        <!-- Carousel Item -->
+        <div class="carousel-item position-relative" id="slide-2">
+          <div class="layer position-absolute top-0 start-0 bg-color h-100"></div>
+          <div class="content position-absolute top-50 translate-middle-y shadow p-5 bg-white">
+            <p class="text-uppercase fs-4">We are expert in</p>
+            <h2 class="text-uppercase main-color fs-1">Business solution</h2>
+            <p class="text-black-50 fs-5 mb-5 mt-4 d-none d-lg-block">
+              We are always looking for a challenge no matter what industry you are in. We have expertise in every
+              aspect of business
+              from complete start up to comprehensive marketing plans, human resources and governmental regulations.
+            </p>
+            <a href="pages/about.html" id="moreInfoBtn"
+              class="info-btn btn d-none d-lg-block fs-5 px-4 rounded-0 py-3">Find More
+              Information</a>
+          </div>
+        </div>
+      </div>
+      <button class="carouselBtn carousel-control-prev" type="button" data-bs-target="#homeSlide" data-bs-slide="prev">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="carouselBtn carousel-control-next" type="button" data-bs-target="#homeSlide" data-bs-slide="next">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+    <!-- Go Up Button -->
+    <button class="goUpBtn btn position-fixed d-none">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+  </header>
+  <!-- Main -->
+  <main>
+    <!-- Icons Section -->
+    <section class="icons text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Icon -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+            <div>
+              <figure class="mb-4 rounded-circle">
+                <i class="fa-solid fa-globe"></i>
+              </figure>
+              <h4>Global Consulting</h4>
+              <p class="text-black-50 mt-4">Incisive guidance that creates measurable, sustainable value and profitable
+                business decisions</p>
+            </div>
+          </div>
+          <!-- Icon -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+            <div>
+              <figure class="mb-4 rounded-circle">
+                <i class="fa-solid fa-hands-asl-interpreting"></i>
+              </figure>
+              <h4>Partner Solutions</h4>
+              <p class="text-black-50 mt-4">As a leading provider of credit data and identity management solutions for
+                businesses</p>
+            </div>
+          </div>
+          <!-- Icon -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+            <div>
+              <figure class="mb-4 rounded-circle">
+                <i class="fa-solid fa-comments"></i>
+              </figure>
+              <h4>Marketing Services</h4>
+              <p class="text-black-50 mt-4">Helping brands have more meaningful interactions with people get more value
+                out of data</p>
+            </div>
+          </div>
+          <!-- Icon -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-3">
+            <div>
+              <figure class="mb-4 rounded-circle">
+                <i class="fa-solid fa-microchip"></i>
+              </figure>
+              <h4>Data Quality</h4>
+              <p class="text-black-50 mt-4">Experian Data Quality is a recognized industry leader of data quality and
+                business healthy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Agency Seciton -->
+    <section class="agency text-white">
+      <div class="container">
+        <!-- Row One -->
+        <div class="row">
+          <!-- Content -->
+          <div class="content col-sm-12 col-md-6">
+            <h2 class="mb-5 mb-md-0">We are one of the best and <span class="main-color">creative agencies</span>
+              in the <span id="newYork">New York</span>
+            </h2>
+          </div>
+          <!-- Image -->
+          <figure class="m-0 col-sm-12 col-md-6 position-relative">
+            <img src="images/about2.jpg" alt="" class="w-100">
+          </figure>
+        </div>
+        <!-- Row Two -->
+        <div class="row align-items-center mt-5 mt-md-0">
+          <!-- Image -->
+          <figure class="m-0 col-sm-12 col-md-5 position-relative">
+            <img src="images/about1.jpg" alt="" class="w-100">
+            <a href="https://youtu.be/fY85ck-pI5c"
+              class="showVideBtn btn position-absolute top-50 start-50 translate-middle">
+              <i class="fa-solid fa-play"></i>
+            </a>
+          </figure>
+          <!-- Content -->
+          <div class="content col-sm-12 col-md-6 fs-5 ms-md-auto mt-4 mt-md-0">
+            <p>There will be writers, designers, SEO experts, and web designers,
+              all working together to create a single piece of
+              content. The first draft is written and reviewed to create the final draft.
+            </p>
+            <a href="pages/about.html"
+              class="readMoreBtn d-flex justify-content-center align-items-center rounded-0 py-2 px-3 mt-5 btn">Read
+              More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Latest Works Section -->
+    <section class="latest-works">
+      <div class="container">
+        <h2 class="text-center">Our Latest Works</h2>
+        <div class="row mt-5">
+          <!-- Item -->
+          <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+            <figure class="m-0 position-relative">
+              <img src="images/portfolio-1.jpg" alt="Portfolio" class="w-100">
+              <div class="layer text-white text-center position-absolute">
+                <i class="fa-solid fa-plus"></i>
+                <h5 class="w-100">Personal Gift</h5>
+                <p class="w-100">Brand Design, Photography</p>
+              </div>
+            </figure>
+          </div>
+          <!-- Item -->
+          <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+            <figure class="m-0 position-relative">
+              <img src="images/portfolio-2.jpg" alt="Portfolio" class="w-100">
+              <div class="layer text-white text-center position-absolute">
+                <i class="fa-solid fa-plus"></i>
+                <h5 class="w-100">Tick Tock</h5>
+                <p class="w-100">3D Design, Brand Design</p>
+              </div>
+            </figure>
+          </div>
+          <!-- Item -->
+          <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+            <figure class="m-0 position-relative">
+              <img src="images/portfolio-3.jpg" alt="Portfolio" class="w-100">
+              <div class="layer text-white text-center position-absolute">
+                <i class="fa-solid fa-plus"></i>
+                <h5 class="w-100">Chair Design</h5>
+                <p class="w-100">3D Design, Photography</p>
+              </div>
+            </figure>
+          </div>
+          <!-- Item -->
+          <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+            <figure class="m-0 position-relative">
+              <img src="images/portfolio-4.jpg" alt="Portfolio" class="w-100">
+              <div class="layer text-white text-center position-absolute">
+                <i class="fa-solid fa-plus"></i>
+                <h5 class="w-100">Infinity Brand</h5>
+                <p class="w-100">Brand Design, Catalog</p>
+              </div>
+            </figure>
+          </div>
+          <!-- Item -->
+          <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+            <figure class="m-0 position-relative">
+              <img src="images/portfolio-5.jpg" alt="Portfolio" class="w-100">
+              <div class="layer text-white text-center position-absolute">
+                <i class="fa-solid fa-plus"></i>
+                <h5 class="w-100">Project Stamp</h5>
+                <p class="w-100">Brand Design</p>
+              </div>
+            </figure>
+          </div>
+          <!-- Item -->
+          <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+            <figure class="m-0 position-relative">
+              <img src="images/portfolio-6.jpg" alt="Portfolio" class="w-100">
+              <div class="layer text-white text-center position-absolute">
+                <i class="fa-solid fa-plus"></i>
+                <h5 class="w-100">Shelf of Arts</h5>
+                <p class="w-100">3D Design, Photography</p>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <a href="#" class="moreProductsBtn btn m-auto mt-5 rounded-0 px-4 py-3 fit d-block">
+          VIEW MORE PROJECTS
+          <i class="fa-solid fa-angle-right ms-2"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Counter Section -->
+    <section class="counter">
+      <div class="container">
+        <h2 class="text-white text-center">
+          Xtra<span class="text-white-50">Business</span>,
+          Will Make Your Website Great Again!
+        </h2>
+        <div class="row mt-5 pt-5">
+          <!-- Count -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-4 text-white">
+            <div class="count rounded-3 text-center p-5">
+              <h2><span class="numAward" data-target="97">0</span>+</h2>
+              <p class="fs-5">Awards Winners</p>
+            </div>
+          </div>
+          <!-- Count -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-4 text-white">
+            <div class="count rounded-3 text-center p-5">
+              <h2 class="main-color"><span class="numAward" data-target="26">0</span>k</h2>
+              <p class="fs-5">Projects Completed</p>
+            </div>
+          </div>
+          <!-- Count -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-4 text-white">
+            <div class="count rounded-3 text-center p-5">
+              <h2><span class="numAward" data-target="17">0</span>+</h2>
+              <p class="fs-5">Expert Members</p>
+            </div>
+          </div>
+          <!-- Count -->
+          <div class="col-sm-12 col-md-6 col-lg-3 p-4 text-white">
+            <div class="count rounded-3 text-center p-5">
+              <h2 class="main-color"><span class="numAward" data-target="88">0</span>%</h2>
+              <p class="fs-5">Business Success</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Some of our services Section -->
+    <section class="some-services">
+      <div class="container">
+        <div class="row">
+          <!-- Content -->
+          <div class="content col-sm-12 col-lg-6">
+            <h2 class="text-center text-lg-start fs-1">Some of our services</h2>
+            <ul class="list-unstyled mt-5 pt-5">
+              <!-- Row -->
+              <li class="row">
+                <figure class="m-0 col-2">
+                  <i class="fa-brands fa-empire"></i>
+                </figure>
+                <div class="desc col-10">
+                  <h4>Counter Fraud Services</h4>
+                  <p>Provide a comprehensive counter fraud service
+                    through the prevention, detection and investigation of fraud.
+                  </p>
+                </div>
+              </li>
+              <!-- Row -->
+              <li class="row mt-5">
+                <figure class="m-0 col-2">
+                  <i class="fa-regular fa-handshake"></i>
+                </figure>
+                <div class="desc col-10">
+                  <h4>Customer Relations Improvement</h4>
+                  <p>Customer Relations and Service Improvement is a section within the Customer Care and Performance.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Image -->
+          <figure class="m-0 col-sm-12 col-lg-6">
+            <img src="images/mobile.jpg" alt="Image" class="w-100">
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer pt-5  ">
+    <div class="container">
+      <div class="row mt-2">
+        <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+          <div class="inner_footer">
+            <div class="footer-title-logo">
+              <div class="footer-logo mb-4">
+                <img src="images/logo-business-classic-footer.png" alt="Logo">
+              </div>
+            </div>
+            <p class=" mb-3 text-start">
+              A company is any entity that engages in business. Companies can be structured in different
+              ways.
+              For example, your company can be a sole proprietorship, a partnership, or a corporation.
+            </p>
+            <div class="linkList">
+              <a href="#" class="iconLink facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="iconLink twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="iconLink instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="iconLink linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="iconLink youtube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+          <div class="inner_footer">
+            <div class="footer-title py-3">
+              Recent Posts
+            </div>
+            <ul class=" list-unstyled footer-img-list">
+              <li class="d-flex p-2">
+
+                <div class="w-25 position-relative overflow-hidden">
+                  <img src="images/card1.jpg" alt="" class="w-100 ">
+                  <div class="fotter_over d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                </div>
+                <div class=" px-2 ps-3">
+                  <h3><a href="" class="link_f">A Place of Silence</a></h3>
+                  <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                </div>
+              </li>
+              <li class="d-flex p-2">
+                <div class="w-25 position-relative overflow-hidden">
+                  <img src="images/card2.jpg" alt="" class="w-100 ">
+                  <div class="fotter_over d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                </div>
+                <div class=" px-2 ps-3">
+                  <h3><a href="" class="link_f">How to create a Logo</a></h3>
+                  <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                </div>
+              </li>
+              <li class="d-flex p-2">
+                <div class="w-25 position-relative overflow-hidden">
+                  <img src="images/card3.jpg" alt="" class="w-100 ">
+                  <div class="fotter_over d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                </div>
+                <div class=" px-2 ps-3">
+                  <h3><a href="" class="link_f">Principles of Coldness</a></h3>
+                  <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+          <div class="inner_footer">
+            <div class="footer-title py-3">
+              Business Hours
+            </div>
+            <p class="my-3">
+              Our support available to help you <span class="mark-font-main">24 hours</span> a day, seven
+              days
+              a week, <span class="mark-font-main">365 days</span> in year.
+            </p>
+            <ul class=" list-unstyled footer-list">
+              <li><span>Monday to Friday</span> <span>8AM - 4PM</span></li>
+              <li><span>Saturday</span> <span>8AM - 1PM</span></li>
+              <li><span>Sunday</span> <span>Support by Email</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="downfooter py-3 mt-5">
+      <div class="container">
+        <div class="row  ">
+          <div class="col-md-6 col-sm-12 left-footer text-start">
+            <p>© Copyright 2024, Designed by XTRA Theme</p>
+
+          </div>
+          <div class="col-md-6 col-sm-12 right-fotter d-flex align-content-center justify-content-end ">
+            <div class="mybreadcrumb">
+              <a href="#">Privacy Policy</a>
+              <a href="#">About</a>
+              <a href="">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/counter.js"></script>
+</body>
+
+</html>

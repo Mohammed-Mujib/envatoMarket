@@ -1,0 +1,135 @@
+/* Start of main tag */
+main section {
+  padding: 100px 0;
+}
+
+/* Our Company Section */
+.ourCompany .container figure {
+  max-width: 600px;
+}
+
+.ourCompany .container figure::before {
+  background-color: var(--main-color);
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 10px;
+  height: 100%;
+  width: 10px;
+}
+
+.ourCompany .container .content h2 {
+  font-weight: 600;
+}
+
+.ourCompany .container .content p {
+  line-height: 30px;
+  color: grey;
+}
+
+.ourCompany .container .content ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ourCompany .container .content ul li i {
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.ourCompany .container .content ul li:hover i {
+  background-color: var(--black);
+}
+
+/* Good Business Section */
+.goodBusiness {
+  background-image: url(../images/footer-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.goodBusiness .content h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.goodBusiness .content h2 span {
+  font-weight: 700;
+}
+
+/* Team Members Section */
+.teamMembers .container h2 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.teamMembers .container figure .imageBox::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 10px;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+}
+
+.teamMembers .container figure .imageBox .layer {
+  opacity: 0;
+  background-color: rgba(12, 163, 130, 0.5);
+}
+
+.teamMembers .container figure:hover .imageBox .layer {
+  opacity: 1;
+}
+
+.teamMembers .container figure .layer .icons {
+  right: 40px;
+  bottom: 40px;
+  font-size: 20px;
+}
+
+.teamMembers .container figure .layer .icons i:hover {
+  transform: rotate(360deg);
+  cursor: pointer;
+}
+
+.teamMembers .container .joinBtn {
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: all 0.2s linear 0s;
+}
+
+.teamMembers .container .joinBtn:hover {
+  background-color: var(--black);
+  font-size: 18px;
+  padding: 15px 25px;
+}
+
+/* Comments Section*/
+.comments {
+  background-color: #f5f5f5;
+}
+
+.comments .container .person .comment::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 22px 0 0;
+  border-color: transparent;
+  border-top-color: var(--main-color);
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.comments .container .person .info-person h5 {
+  font-weight: 700;
+}

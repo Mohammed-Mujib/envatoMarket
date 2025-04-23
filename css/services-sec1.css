@@ -1,0 +1,29 @@
+.hover .hover-2 .text-center i{
+    background-color: white;
+    color: #0ca684;
+    border-width: 3px;
+    border-style: solid;
+}
+.hover{
+    transition:all 0.4s ;
+}
+
+.hover:hover{
+    transform: translateY(-20px);
+}
+.hover:hover .hover-2 .text-center i{
+    background-color: white;
+    transform: rotate3d(20deg);
+}
+.hover:hover .hover-2 .text-center i{
+    color: white;
+    background-color: #0ca684;
+    transform: rotatey(200deg);
+    border-color: #0ca684 ;
+    border-style: solid ;
+    border-width: 3px ;
+    
+}
+i{
+    transition: all 0.4s;
+}

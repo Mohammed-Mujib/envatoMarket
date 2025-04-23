@@ -8,14 +8,14 @@ const cartRowsRow = document.querySelector("#cartRowsRow");
 let cart = JSON.parse(localStorage.getItem("cart_items")) || [];
 
 // add the getPrice function to the cart items
-function addGetPrice(){
+function addGetPrice() {
     cart.forEach(item => {
-        item.getPrice = function() {
+        item.getPrice = function () {
             return this.quantity * this.price;
         };
     });
 }
-addGetPrice()
+addGetPrice();
 
 let products = JSON.parse(localStorage.getItem("ex_products")) || [
     {
@@ -25,7 +25,7 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 1,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -36,7 +36,7 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 2,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -47,7 +47,7 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 3,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -58,7 +58,7 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 4,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -69,7 +69,7 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 5,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -80,7 +80,7 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 6,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -91,13 +91,13 @@ let products = JSON.parse(localStorage.getItem("ex_products")) || [
         addedToCart: false,
         id: 7,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     }
 ];
 
-let recomendProducts = JSON.parse(localStorage.getItem("recomendProducts"))|| [
+let recomendProducts = JSON.parse(localStorage.getItem("recomendProducts")) || [
     {
         name: "super Package",
         image: "package7.jpg",
@@ -105,7 +105,7 @@ let recomendProducts = JSON.parse(localStorage.getItem("recomendProducts"))|| [
         addedToCart: false,
         id: 10,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     },
@@ -116,19 +116,19 @@ let recomendProducts = JSON.parse(localStorage.getItem("recomendProducts"))|| [
         addedToCart: false,
         id: 20,
         quantity: 1,
-        getPrice: function() {
+        getPrice: function () {
             return this.quantity * this.price;
         }
     }
 ];
 
 //the statement will be performed only in the shop page
-if (location.pathname == "/shop.html") {
+if (location.pathname == "/pages/shop.html") {
     displayProducts();
 }
 
 //the statement will be preformed only in the cart page
-if (location.pathname == "/cart.html") {
+if (location.pathname == "/pages/cart.html") {
     displayCart();
     displayRecomendProducts();
 }
@@ -137,11 +137,11 @@ if (location.pathname == "/cart.html") {
 function displayProducts() {
     let cartona = "";
     for (let i = 0; i < products.length; i++) {
-        cartona +=`
+        cartona += `
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-5 mt-2">
                     <div class="product_box position-relative">
                         <div class="img_box mb-2 ">
-                            <img src="images/${products[i].image}" alt="" class=" w-100">
+                            <img src="../images/${products[i].image}" alt="" class=" w-100">
                         </div>
                         <span class="product_price px-4 py-2">$ ${products[i].price}</span>
                         <div class="stars">
@@ -162,12 +162,12 @@ function displayProducts() {
 
 // a function that perform the event of adding products to cart
 function addToCart(product_id) {
-    if (location.pathname == "/cart.html") {
+    if (location.pathname == "/pages/cart.html") {
         for (let i = 0; i < recomendProducts.length; i++) {
             if (product_id == recomendProducts[i].id) {
                 if (recomendProducts[i].addedToCart == false) {
                     recomendProducts[i].addedToCart = true;
-    
+
                     // Push a new object to the cart with the getPrice method
                     cart.push({
                         id: recomendProducts[i].id,
@@ -175,9 +175,9 @@ function addToCart(product_id) {
                         image: recomendProducts[i].image,
                         price: recomendProducts[i].price,
                         quantity: recomendProducts[i].quantity,
-                        getPrice: recomendProducts[i].getPrice 
+                        getPrice: recomendProducts[i].getPrice
                     });
-    
+
                     localStorage.setItem("recomendProducts", JSON.stringify(recomendProducts));
                     localStorage.setItem("cart_items", JSON.stringify(cart));
                     addGetPrice();
@@ -187,7 +187,7 @@ function addToCart(product_id) {
             }
         }
     }
-    else{
+    else {
         for (let i = 0; i < products.length; i++) {
             if (product_id == products[i].id) {
                 if (products[i].addedToCart == false) {
@@ -199,7 +199,7 @@ function addToCart(product_id) {
                         image: products[i].image,
                         price: products[i].price,
                         quantity: products[i].quantity,
-                        getPrice: products[i].getPrice 
+                        getPrice: products[i].getPrice
                     });
                     localStorage.setItem("ex_products", JSON.stringify(products));
                     localStorage.setItem("cart_items", JSON.stringify(cart));
@@ -246,7 +246,7 @@ function displayCart() {
                         </button>
                     </div>
                     <div class="col-sm-12 col-md-3 bg-white img-cart p-3  border ">
-                        <img src="images/${cart[i].image}" class="w-50 w-sm-100" alt="">
+                        <img src="../images/${cart[i].image}" class="w-50 w-sm-100" alt="">
                     </div>
                     <div class="col-sm-12 col-md-2 bg-white Product-name-td p-3  border d-flex align-items-center">
                         <span class=" me-2 fw-bold d-md-none">name: </span>
@@ -273,6 +273,12 @@ function displayCart() {
     }
     let boxheader = `
                 <div class="col-12 row border p-sm-2 align-content-center mx-auto bg-main pb-sm-2 row_header_caer rounded-top mb-0">
+                <h3 class="text-white text-center">cart is empty</h3>
+                </div>
+    `;
+    if (cart.length > 0) {
+        boxheader = `
+                <div class="col-12 row border p-sm-2 align-content-center mx-auto bg-main pb-sm-2 row_header_caer rounded-top mb-0">
                     <div class="col-sm-12 col-md-1 bg-light  delete-td p-1 d-flex justify-content-center align-content-center position-relative "></div>
                     <div class="col-sm-12 col-md-3 bg-light img-cart p-1  border "></div>
                     <div class="col-sm-12 col-md-2 bg-light Product-name-td p-1  border d-flex align-items-center">
@@ -289,12 +295,13 @@ function displayCart() {
                     </div>
                 </div>
     `; 
+    } 
     cartRowsRow.innerHTML = boxheader + box;
     getTotal()
 }
 
 // will update the value of the total
-function getTotal(){
+function getTotal() {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         total += cart[i].getPrice()
@@ -307,24 +314,24 @@ function getTotal(){
 function displayRecomendProducts() {
     let cartona = "";
     for (let i = 0; i < recomendProducts.length; i++) {
-        cartona +=`
-                <div class="col-sm-12 col-md-6 mb-2 mt-2 mb-sm-4">
-                    <div class="product_box position-relative">
-                        <div class="img_box mb-2 ">
-                            <img src="images/${recomendProducts[i].image}" alt="" class=" w-100">
-                        </div>
-                        <span class="product_price px-4 py-2">$ ${recomendProducts[i].price}</span>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <h2 class="text-center py-2 product_title">${recomendProducts[i].name}</h2>
-                        <button class="btn text-center w-100 add_btn mt-1 mb-2 rounded-0 p-2" onclick="addToCart(${recomendProducts[i].id})"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+        cartona += `
+            <div class="col-sm-12 col-md-6 mb-2 mt-2 mb-sm-4">
+                <div class="product_box position-relative">
+                    <div class="img_box mb-2 ">
+                        <img src="../images/${recomendProducts[i].image}" alt="" class=" w-100">
                     </div>
+                    <span class="product_price px-4 py-2">$ ${recomendProducts[i].price}</span>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h2 class="text-center py-2 product_title">${recomendProducts[i].name}</h2>
+                    <button class="btn text-center w-100 add_btn mt-1 mb-2 rounded-0 p-2" onclick="addToCart(${recomendProducts[i].id})"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
                 </div>
+            </div>
             `;
     }
     recomend.innerHTML = cartona;
@@ -351,25 +358,25 @@ const qInput = document.querySelectorAll(".q-input");
 
 //FIXME:
 function test() {
-    qInput.forEach((e)=>{
-        e.addEventListener("keyup",(dosa)=>{
-            let nums = ["1","2","3","4","5","6","7","8","9","0"];
+    qInput.forEach((e) => {
+        e.addEventListener("keyup", (dosa) => {
+            let nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
             if (e.value == "NaN") {
                 e.value = 1
             }
-            if (e.value.length <1) {
+            if (e.value.length < 1) {
                 e.value = 1
             }
             if (!nums.includes(dosa.key)) {
-                e.value = parseInt(e.value)   
-            }  
+                e.value = parseInt(e.value)
+            }
             getTotal()
-        })    
+        })
     });
 }
 
-function quantitytybe(count){
-    if (qInput[count].value.length <1) {
+function quantitytybe(count) {
+    if (qInput[count].value.length < 1) {
         qInput[count].value = 1
     }
     cart[count].quantity = qInput[count].value;
@@ -377,7 +384,7 @@ function quantitytybe(count){
     getTotal()
     localStorage.setItem("cart_items", JSON.stringify(cart));
     console.log(cart[count]);
-    
+
 }
 
 /*qInput.forEach((e)=>{
@@ -397,17 +404,17 @@ function quantitytybe(count){
 
 // increace the quantity of a product
 function quantityPlus(count) {
-    cart[count].quantity ++;
+    cart[count].quantity++;
     localStorage.setItem("cart_items", JSON.stringify(cart));
     displayCart();
-    
+
     getTotal()
 }
 
 // dicreace the quantity of a product
 function quantityMines(count) {
-    if (cart[count].quantity >=2) {
-        cart[count].quantity --;
+    if (cart[count].quantity >= 2) {
+        cart[count].quantity--;
     }
     localStorage.setItem("cart_items", JSON.stringify(cart));
     displayCart();
@@ -428,26 +435,26 @@ function deleteFromCart(count) {
             localStorage.setItem("recomendProducts", JSON.stringify(recomendProducts));
         }
     }
-    cart.splice(count,1)
+    cart.splice(count, 1)
     addGetPrice()
     console.log(cart);
-    localStorage.setItem("cart_items", JSON.stringify(cart));    
+    localStorage.setItem("cart_items", JSON.stringify(cart));
     displayCart()
 }
 
 
 function successpopup() {
     let successAnime = document.querySelector(".successAnime");
-    successAnime.classList.toggle("d-none") 
-    setTimeout(()=>{
-        successAnime.classList.toggle("opacity-0") 
-    },1000)
-    setTimeout(()=>{
-        successAnime.classList.toggle("opacity-0") 
-        setTimeout(()=>{
-            successAnime.classList.toggle("d-none") 
-        },2000)
-    },3500)
+    successAnime.classList.toggle("d-none")
+    setTimeout(() => {
+        successAnime.classList.toggle("opacity-0")
+    }, 1000)
+    setTimeout(() => {
+        successAnime.classList.toggle("opacity-0")
+        setTimeout(() => {
+            successAnime.classList.toggle("d-none")
+        }, 2000)
+    }, 3500)
 }
 // let showCArtbtn = document.querySelector("#howbtn");
 // showCArtbtn.addEventListener("click",()=>{

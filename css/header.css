@@ -1,0 +1,382 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+/* Start of general stytling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear 0s;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --main-color: #0ca382;
+  --white: #fff;
+  --black: #000;
+}
+
+.fit {
+  width: fit-content;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.bg-color {
+  background-color: var(--main-color);
+}
+/* End of general stytling */
+
+/* Strart of Header ( Home ) */
+/* Home Connect */
+.home .container .connect span,
+.home .container .connect span a {
+  color: #444;
+  font-family: "Roboto", sans-serif;
+}
+
+.home .container .connect span:hover,
+.home .container .connect span a:hover {
+  color: var(--main-color);
+}
+
+.home .connect .modal input[type="number"]::-webkit-inner-spin-button,
+.home .connect .modal input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.home .container .connect .modal input {
+  border: 1px solid var(--main-color);
+}
+
+.home .container .connect .modal input:focus {
+  outline: 1.5px solid var(--main-color);
+}
+
+.home .container .connect .modal .loginBtn {
+  background-color: var(--main-color);
+  color: var(--white);
+  font-weight: 600;
+  border: 1px solid var(--main-color);
+}
+
+.home .container .connect .modal .loginBtn:hover {
+  background-color: var(--black);
+}
+
+/* Home Social Links */
+.home .container .social-links {
+  width: fit-content;
+}
+
+.home .container .social-links a {
+  color: #444;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  width: 38px;
+}
+
+.home .container .social-links a:nth-of-type(1):hover {
+  background-color: #34518d;
+  color: var(--white);
+}
+
+.home .container .social-links a:nth-of-type(2):hover {
+  background-color: #24a4f2;
+  color: var(--white);
+}
+
+.home .container .social-links a:nth-of-type(3):hover {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: var(--white);
+}
+
+.home .container .social-links a:nth-of-type(4):hover {
+  background-color: #0077b5;
+  color: var(--white);
+}
+
+.home .container .social-links a:nth-of-type(5):hover {
+  background-color: #00aff0;
+  color: var(--white);
+}
+
+.home .container .social-links a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home .container .social-links a::before {
+  content: "Facebook";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 3px 8px;
+  font-size: 14px;
+  transition: all 0.2s linear 0s;
+  opacity: 0;
+  z-index: 5;
+}
+
+.home .container .social-links a:nth-of-type(2)::before {
+  content: "Twitter";
+}
+
+.home .container .social-links a:nth-of-type(3)::before {
+  content: "Instagram";
+}
+
+.home .container .social-links a:nth-of-type(4)::before {
+  content: "LinkedIn";
+}
+
+.home .container .social-links a:nth-of-type(5)::before {
+  content: "Skype";
+}
+
+.home .container .social-links a:hover::before {
+  opacity: 1;
+}
+
+/* Navbar */
+.navbar {
+  height: 100px;
+}
+
+.navbar .container .navbar-brand img {
+  max-width: 200px;
+}
+
+.navbar .container .navbar-collapse {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 2;
+}
+
+/* Show the dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure dropdown is hidden by default */
+.nav-item .dropdown-menu {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-item.dropdown:hover .nav-link::after {
+  transform: rotate(180deg);
+}
+
+.navbar .container .navbar-nav .nav-item .nav-link {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: 700;
+  border-bottom: 1px solid lightgrey;
+  padding: 15px 0;
+  font-size: 18px;
+}
+
+.navbar .container .navbar-nav .nav-item:nth-last-of-type(1) .nav-link,
+.navbar .container .navbar-nav .nav-item:nth-last-of-type(2) .nav-link {
+  color: var(--black);
+}
+
+.navbar .container .navbar-nav .nav-item .nav-link.active,
+.navbar .container .navbar-nav .nav-item .nav-link:hover {
+  color: var(--main-color);
+}
+
+.navbar .container .navbar-nav .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  left: 0;
+  bottom: 0;
+  background-color: var(--main-color);
+  height: 8px;
+  opacity: 0;
+  transition: all 0.2s linear 0s;
+}
+
+.navbar .container .navbar-nav .nav-item:nth-last-of-type(1) .nav-link:before,
+.navbar .container .navbar-nav .nav-item:nth-last-of-type(2) .nav-link:before {
+  background-color: var(--white);
+}
+
+.navbar .container .navbar-nav .nav-item .nav-link.active::before,
+.navbar .container .navbar-nav .nav-item .nav-link:hover::before {
+  opacity: 1;
+}
+
+.navbar .container .navbar-nav .dropdown-menu a:hover {
+  color: var(--main-color) !important;
+}
+
+.navbar .container .navbar-nav .nav-item .nav-link i #numProducts {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--black);
+  font-weight: 400;
+}
+
+/* Home Slide */
+.slide .carousel-inner #slide-1,
+.slide .carousel-inner #slide-2 {
+  background-image: url(../images/home-slide-1.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-color: #eff3f4;
+  z-index: -1;
+}
+
+.slide .carousel-inner #slide-2 {
+  background-image: url(../images/home-slide-2.jpg);
+  background-position: right;
+  background-color: #e2e3e0;
+}
+
+.slide .carousel-inner .carousel-item .layer {
+  width: 0;
+}
+
+.slide .carousel-inner .carousel-item .content {
+  background-color: rgba(255, 255, 255, 0.9);
+  right: 0;
+  max-width: 550px;
+  font-family: "Roboto", sans-serif;
+  z-index: 4;
+}
+
+.slide .carousel-inner #slide-2 .content {
+  right: auto;
+  left: 0;
+}
+
+.slide .carousel-inner .carousel-item .content h2 {
+  font-weight: 550;
+  font-size: 40px;
+}
+
+.slide .carousel-inner .carousel-item .content p {
+  line-height: 32px;
+}
+
+.slide .carousel-inner .carousel-item .content .info-btn {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: var(--white);
+  border: 1px solid var(--main-color);
+}
+
+.slide .carousel-inner .carousel-item .content .info-btn:hover {
+  background-color: var(--white);
+  color: var(--main-color);
+}
+
+.slide .carousel-inner .carousel-item .content::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15px;
+  background-color: var(--main-color);
+}
+
+.slide .carousel-inner #slide-2 .content::before {
+  left: auto;
+  right: 0;
+}
+
+.slide .carouselBtn {
+  color: var(--black);
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  background-color: var(--white);
+  height: 80px;
+  width: 80px;
+}
+
+.slide .carouselBtn:hover {
+  font-size: 22px;
+}
+
+/* Go Up Button */
+.goUpBtn {
+  background-color: var(--main-color);
+  color: var(--white);
+  font-size: 18px;
+  bottom: 20px;
+  right: 20px;
+  border: 2px solid var(--main-color) !important;
+  z-index: 10;
+}
+
+.goUpBtn:hover {
+  color: var(--main-color);
+  background-color: transparent;
+}
+
+/* Links Section in about page */
+.home .linksSec {
+  background-color: #e7e7e7;
+}
+
+.home .linksSec h4 {
+  font-weight: 600;
+}
+
+@media (width >= 992px) {
+  .navbar .container .navbar-collapse {
+    height: 100px;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .navbar .container .navbar-nav .nav-item .nav-link {
+    height: 100px;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .navbar .container .navbar-nav .nav-item .nav-link::before {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+  /* Slide */
+  .slide .carousel-inner .carousel-item .content {
+    right: 100px;
+  }
+
+  .slide .carousel-inner #slide-2 .content {
+    right: auto;
+    left: 100px;
+  }
+
+  .slide .carousel-inner .carousel-item .layer {
+    width: 30%;
+  }
+}
+/* End of Header ( Home ) */

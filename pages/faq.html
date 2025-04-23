@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/faq.css">
+  <title>E-Commerce Website</title>
+</head>
+
+<body>
+  <!-- Header (Home) -->
+  <header class="home" id="home">
+    <section class="home-info bg-body-secondary">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Connect -->
+          <div class="connect col-12 col-md-6 col-lg-9 pt-sm-2 pt-md-0">
+            <span>
+              <i class="fa-solid fa-phone-volume"></i>
+              <a href="tel:++1 (123) 45 67" class="text-decoration-none">+1 (123) 45 67</a>
+            </span>
+            <span class="mx-4">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:890info@site.comMy" class="text-decoration-none">890info@site.comMy</a>
+            </span>
+            <span>
+              <i class="fa-solid fa-user"></i>
+              <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                My Account</a>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="loginFromModal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content p-4">
+                    <div class="modal-header border-0">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body position-relative">
+                      <!-- Login Form -->
+                      <div class="loginForm">
+                        <h1 class="modal-title text-center mb-5 text-black fs-3" id="loginFromModal">Login to website
+                        </h1>
+                        <form action="#" method="post">
+                          <input class="w-100 py-2 p-3" type="text" name="username" placeholder="Username" required>
+                          <input class="w-100 py-2 p-3 my-3" type="password" name="password" placeholder="Password"
+                            required>
+                          <input class="w-100 py-2 p-3" type="number" name="testHuman" placeholder="4 + 4 ?" required>
+                          <button type="submit" class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Login Now</button>
+                          <a href="#" class="showRecoverForm btn fit m-auto d-block">Forgot your password? Get help</a>
+                          <a href="#" class="showRegisterForm btn fit m-auto d-block">Not registered? Create an
+                            account</a>
+                        </form>
+                      </div>
+                      <!-- Register Form -->
+                      <div class="registerForm position-absolute w-100 h-100 z-n1 bg-white top-0 px-4 start-0">
+                        <h1 class="modal-title text-center mb-5 text-black fs-3">Registration from</h1>
+                        <form action="#" method="post">
+                          <input class="w-100 py-2 p-3 mb-3" type="text" name="username" placeholder="Username"
+                            required>
+                          <input class="w-100 py-2 p-3" type="email" name="email" placeholder="Your Email" required>
+                          <input class="w-100 py-2 p-3 my-3" type="password" name="password" placeholder="Password"
+                            required>
+                          <input class="w-100 py-2 p-3" type="number" name="testHuman" placeholder="8 + 6 ?" required>
+                          <button type="submit" class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Signup Now</button>
+                          <a href="#" class="showLoginForm btn fit m-auto d-block">Already registered? Sign In</a>
+                        </form>
+                      </div>
+                      <!-- Recovery Form -->
+                      <div class="recoveryForm position-absolute w-100 h-100 z-n1 bg-white top-0 px-4 start-0">
+                        <h1 class="modal-title text-center mb-5 text-black fs-3">Password recovery!</h1>
+                        <form action="#" method="post">
+                          <input class="w-100 py-2 p-3" type="email" name="email" placeholder="Your Email" required>
+                          <input class="w-100 py-2 p-3 mt-3" type="number" name="testHuman" placeholder="10 + 7 ?"
+                            required>
+                          <button type="submit" class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Send my
+                            password</button>
+                          <a href="#" class="showLoginForm btn fit m-auto d-block">Already registered? Sign In</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <!-- Social Links -->
+          <div class="social-links ms-md-auto">
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-decoration-none fs-5">
+              <i class="fa-brands fa-skype"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../images/logo-business-classic.png" alt="Logo" class="w-100">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse rounded-3 bg-white" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown mx-lg-2">
+              <a class="nav-link d-lg-flex mx-lg-4 dropdown-toggle" href="about.html" role="button"
+                aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu bg-color">
+                <li><a class="dropdown-item text-white" href="#">Submenu 1</a></li>
+                <li><a class="dropdown-item text-white" href="#">Submenu 2</a></li>
+                <li><a class="dropdown-item text-white" href="#">Submenu 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex active mx-lg-4" href="faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex mx-lg-4" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-lg-flex" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5 d-lg-flex mx-lg-4" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5 d-lg-flex" href="cart.html">
+                <i class="fa-solid fa-bag-shopping position-relative">
+                  <span id="numProducts">0</span>
+                </i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Links Section -->
+    <section class="linksSec py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <h4 class="col-8">FAQ</h4>
+          <div class="col-4 ms-auto fit">
+            <a href="../index.html" class="text-decoration-none text-dark" title="Home Page">
+              <i class="fa-solid fa-house"></i>
+            </a>
+            <i class="fa-solid fa-angle-right mx-2"></i>
+            <span class="text-decoration-none text-dark">FAQ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Go Up Button -->
+    <button class="goUpBtn btn position-fixed d-none">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+  </header>
+  <!-- Main -->
+  <main>
+    <section>
+      <div class="container">
+        <h1 class="text-center">Do you have any questions? Ask us</h1>
+        <p class="text-center mt-5 fs-5">Please read questions bellow and if you can not
+          find your answer, please send us your question, we will answer you as soon as possible.
+        </p>
+        <div class="row mt-5 pt-4">
+          <!-- FAQS Div -->
+          <div class="faqs col-sm-12 col-lg-8 px-lg-4">
+            <div class="d-flex align-items-center mb-4">
+              <i class="fa-regular fa-circle-question bg-color text-white fs-2 p-3"></i>
+              <div class="faqTitle mt-3 ms-3">
+                <h5><b>F.A.Qs</b></h5>
+                <p class="text-black-50">Frequently asked questions</p>
+              </div>
+            </div>
+            <!-- Start of Collapse -->
+            <!-- Question 1 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 active btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="false" aria-controls="q1">
+                <div>
+                  <i class="fa-solid fa-bookmark me-3"></i>
+                  Your Question Title?
+                </div>
+                <i class="fa-solid fa-angles-down"></i>
+              </button>
+              <div class="collapse show" id="q1">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
+                <div>
+                  <i class="fa-regular fa-comment me-3"></i>
+                  Do eiusmod tempor incidit?
+                </div>
+                <i class="fa-solid fa-angles-right"></i>
+              </button>
+              <div class="collapse" id="q2">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
+                <div>
+                  <i class="fa-regular fa-comment me-3"></i>
+                  Cupidatat iusmod tempor incid idun?
+                </div>
+                <i class="fa-solid fa-angles-right"></i>
+              </button>
+              <div class="collapse" id="q3">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">
+                <div>
+                  <i class="fa-regular fa-comment me-3"></i>
+                  Excepteur sint occaecat cupidatat iusmod tempor incid idun?
+                </div>
+                <i class="fa-solid fa-angles-right"></i>
+              </button>
+              <div class="collapse" id="q4">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+            <!-- Question 5 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q5" aria-expanded="false" aria-controls="q5">
+                <div>
+                  <i class="fa-regular fa-comment me-3"></i>
+                  Consectetur adipisicing elit, sed do eiusmod tempor incididunt?
+                </div>
+                <i class="fa-solid fa-angles-right"></i>
+              </button>
+              <div class="collapse" id="q5">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+            <!-- Other Questions -->
+            <div class="d-flex align-items-center py-4">
+              <i class="fa-regular fa-circle-question bg-color text-white fs-2 p-3"></i>
+              <div class="faqTitle mt-3 ms-3">
+                <h5><b>Other Questions</b></h5>
+                <p class="text-black-50">General questions</p>
+              </div>
+            </div>
+            <!-- Question 6 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q6" aria-expanded="false" aria-controls="q6">
+                <div>
+                  <i class="fa-regular fa-comment me-3"></i>
+                  Your Question Title?
+                </div>
+                <i class="fa-solid fa-angles-right"></i>
+              </button>
+              <div class="collapse" id="q6">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+            <!-- Question 7 -->
+            <div class="mb-3">
+              <button
+                class="collapseBtn fs-5 btn rounded-0 py-3 px-4 d-flex justify-content-between align-items-center w-100"
+                type="button" data-bs-toggle="collapse" data-bs-target="#q7" aria-expanded="false" aria-controls="q7">
+                <div>
+                  <i class="fa-regular fa-comment me-3"></i>
+                  Do eiusmod tempor incidit?
+                </div>
+                <i class="fa-solid fa-angles-right"></i>
+              </button>
+              <div class="collapse" id="q7">
+                <div class="card border-0 p-4 card-body rounded-0 bg-color text-white">
+                  I am text block. Click edit button to change this text. Lorem ipsum dolor
+                  sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Questions Div -->
+          <div class="questions col-sm-12 col-lg-4 mt-5 mt-lg-0">
+            <div class="content p-4">
+              <div class="d-flex align-items-center ">
+                <i class="fa-regular fa-circle-question bg-color text-white fs-2 p-3"></i>
+                <div class="faqTitle mt-3 ms-3">
+                  <h5><b>Ask Us ...</b></h5>
+                  <p class="text-black-50">Have questions ?</p>
+                </div>
+              </div>
+              <p class="qTitle my-4">
+                I am a text block you can edit, Praesent sapien massa, convallis a
+                pellentesque nec, egestas non nisi. Proin eget tortor risus. Vivamus suscipit tortor felis.
+              </p>
+              <!-- Form -->
+              <form action="#" method="post" target="_blank">
+                <!-- Name -->
+                <label for="name" class="form-label text-black-50">Your Name (*)</label>
+                <input type="text" name="name" class="w-100 px-3 py-2" required>
+                <!-- Email -->
+                <label for="email" class="form-label text-black-50 mt-3">Your Email (*)</label>
+                <input type="email" name="email" class="w-100 px-3 py-2" required>
+                <!-- Subject -->
+                <label for="subject" class="form-label text-black-50 mt-3">Subject</label>
+                <input type="text" name="subject" class="w-100 px-3 py-2">
+                <!-- Department -->
+                <label for="department" class="form-label text-black-50 mt-3">Department</label>
+                <select name="department" id="department" class="w-100 px-2 py-2">
+                  <option value="business">Business Department</option>
+                  <option value="personal">Personal Department</option>
+                  <option value="support">Support Department</option>
+                  <option value="others">Others</option>
+                </select>
+                <!-- Your Question -->
+                <label for="your-question" class="form-label text-black-50 mt-3">Your Question</label>
+                <textarea name="your-question" id="your-question" rows="5" class="w-100 px-3 py-2"></textarea>
+                <!-- Ask Button -->
+                <button type="submit" class="askBtn rounded-0 mt-4 px-3 btn fit d-block ms-auto">Ask</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer pt-5  ">
+    <div class="container">
+      <div class="row mt-2">
+        <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+          <div class="inner_footer">
+            <div class="footer-title-logo">
+              <div class="footer-logo mb-4">
+                <img src="../images/logo-business-classic-footer.png" alt="Logo">
+              </div>
+            </div>
+            <p class=" mb-3 text-start">
+              A company is any entity that engages in business. Companies can be structured in different
+              ways.
+              For example, your company can be a sole proprietorship, a partnership, or a corporation.
+            </p>
+            <div class="linkList">
+              <a href="#" class="iconLink facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="iconLink twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="iconLink instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="iconLink linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="iconLink youtube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+          <div class="inner_footer">
+            <div class="footer-title py-3">
+              Recent Posts
+            </div>
+            <ul class=" list-unstyled footer-img-list">
+              <li class="d-flex p-2">
+
+                <div class="w-25 position-relative overflow-hidden">
+                  <img src="../images/card1.jpg" alt="" class="w-100 ">
+                  <div class="fotter_over d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                </div>
+                <div class=" px-2 ps-3">
+                  <h3><a href="" class="link_f">A Place of Silence</a></h3>
+                  <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                </div>
+              </li>
+              <li class="d-flex p-2">
+                <div class="w-25 position-relative overflow-hidden">
+                  <img src="../images/card2.jpg" alt="" class="w-100 ">
+                  <div class="fotter_over d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                </div>
+                <div class=" px-2 ps-3">
+                  <h3><a href="" class="link_f">How to create a Logo</a></h3>
+                  <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                </div>
+              </li>
+              <li class="d-flex p-2">
+                <div class="w-25 position-relative overflow-hidden">
+                  <img src="../images/card3.jpg" alt="" class="w-100 ">
+                  <div class="fotter_over d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-link"></i>
+                  </div>
+                </div>
+                <div class=" px-2 ps-3">
+                  <h3><a href="" class="link_f">Principles of Coldness</a></h3>
+                  <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+          <div class="inner_footer">
+            <div class="footer-title py-3">
+              Business Hours
+            </div>
+            <p class="my-3">
+              Our support available to help you <span class="mark-font-main">24 hours</span> a day, seven
+              days
+              a week, <span class="mark-font-main">365 days</span> in year.
+            </p>
+            <ul class=" list-unstyled footer-list">
+              <li><span>Monday to Friday</span> <span>8AM - 4PM</span></li>
+              <li><span>Saturday</span> <span>8AM - 1PM</span></li>
+              <li><span>Sunday</span> <span>Support by Email</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="downfooter py-3 mt-5">
+      <div class="container">
+        <div class="row  ">
+          <div class="col-md-6 col-sm-12 left-footer text-start">
+            <p>© Copyright 2024, Designed by XTRA Theme</p>
+
+          </div>
+          <div class="col-md-6 col-sm-12 right-fotter d-flex align-content-center justify-content-end ">
+            <div class="mybreadcrumb">
+              <a href="#">Privacy Policy</a>
+              <a href="#">About</a>
+              <a href="">Contact us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/faq.js"></script>
+</body>
+
+</html>

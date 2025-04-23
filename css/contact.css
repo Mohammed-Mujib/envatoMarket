@@ -1,0 +1,98 @@
+:root{
+    --main-color-1: #0ca684;
+    --main-color-2: #A0A0A0;
+    --main-color-3: #727272;
+    --main-color-4: #666666;
+}
+.container .contact-left .content{
+    padding: 10px 0px 0px 12px;
+}
+
+.container .contact-left .content .contact .icon{
+    width: 65px;
+    height: 65px;
+    background-color: var(--main-color-1);
+    margin-bottom: 10px;
+    align-content: center;
+}
+
+.container .contact-left .content .contact .icon p{
+    padding-top: 10px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+.container .contact-left .content .contact .art small{
+    color: var(--main-color-2);
+    font-style: italic;
+    font-size: 16px;
+}
+
+.container .contact-left .content .contact .art p{
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container .contact-left .content .contact:hover .icon{
+    background-color: black;
+    animation: grow .5s;
+}
+
+@keyframes grow {
+    0%{
+        opacity: 0;
+        transform: scale(0.75);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container .contact-left .location{
+    height: 400px;
+    border: 0;
+    margin-bottom: 150px;
+}
+
+.container .contact-right h3{
+    font-size: 36px;
+    padding: 20px 0px 30px 0px;
+    font-weight: 700;
+}
+
+.container .contact-right p{
+    line-height: 2;
+    font-size: 18px;
+    color: var(--main-color-4);
+    padding: 20px 0px;
+}
+
+.container .contact-right label{
+    color: var(--main-color-3);
+}
+
+.container .contact-right .btn{
+    background-color: var(--main-color-1);
+    color: white;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+.container .contact-right .btn:hover{
+    background-color: black;
+}
+
+.container .contact-right .frem{
+    border: black 1px solid;
+    border-radius: 0px;
+    padding: 10px;
+    outline: none;
+    box-shadow: none;
+}
+
+.container .contact-right .frem:focus{
+    border: 1px #0ca684 solid;
+}

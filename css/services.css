@@ -1,0 +1,100 @@
+main .howItWork {
+  background-image: url(../images/row-bg-about.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.howItWork .row .num p {
+  padding: 25px 35px;
+  background-color: var(--white);
+  color: var(--main-color);
+  font-size: 50px;
+}
+
+.howItWork .row .descP {
+  max-width: 250px;
+  margin: auto;
+}
+
+.howItWork .row .num .layer {
+  height: 1px;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-bottom: 2px dotted;
+}
+
+.howItWork .row .number:nth-of-type(2) .num .layer {
+  width: 100%;
+  right: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.howItWork .row .number:nth-of-type(3) .num .layer {
+  right: auto;
+  left: 0;
+}
+
+.howItWork .row .num:hover p {
+  color: var(--white);
+  background-color: var(--main-color);
+}
+
+/* Prices Section */
+.prices .row .price div {
+  background-color: #fcfcfc;
+  border: 1px solid lightgrey;
+}
+
+
+.prices .row .price:nth-of-type(2) div,
+.prices .row .price div:hover {
+  border-color: var(--main-color);
+  background-color: #f5fcfa;
+  transform: translateY(-20px);
+}
+
+.prices .row .price:nth-of-type(2) div h4,
+.prices .row .price div:hover h4 {
+  color: var(--main-color);
+}
+
+.prices .row .price div p.my-4 {
+  line-height: 30px;
+}
+
+.prices .row .price .priceNum {
+  font-weight: bold;
+  color: lightgrey;
+  font-size: 80px;
+}
+
+.prices .row .price div a.btn {
+  color: var(--main-color);
+  background-color: transparent;
+  font-weight: 700;
+  border: 1px solid var(--main-color);
+}
+
+.prices .row .price a.btn::before {
+  content: "Good Choice";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--white);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear 0s;
+  opacity: 0;
+}
+
+.prices .row .price a.btn:hover::before {
+  opacity: 1;
+}

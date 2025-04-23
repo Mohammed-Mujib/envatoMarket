@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/icon.jpeg">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <title>Contact</title>
+</head>
+
+<body>
+    <!-- Header (Home) -->
+    <header class="home" id="home">
+        <section class="home-info bg-body-secondary">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Connect -->
+                    <div class="connect col-12 col-md-6 col-lg-9 pt-sm-2 pt-md-0">
+                        <span>
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <a href="tel:++1 (123) 45 67" class="text-decoration-none">+1 (123) 45 67</a>
+                        </span>
+                        <span class="mx-4">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:890info@site.comMy" class="text-decoration-none">890info@site.comMy</a>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                            <a href="#" class="text-decoration-none" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                My Account</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="loginFromModal"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content p-4">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body position-relative">
+                                            <!-- Login Form -->
+                                            <div class="loginForm">
+                                                <h1 class="modal-title text-center mb-5 text-black fs-3"
+                                                    id="loginFromModal">Login to website
+                                                </h1>
+                                                <form action="#" method="post">
+                                                    <input class="w-100 py-2 p-3" type="text" name="username"
+                                                        placeholder="Username" required>
+                                                    <input class="w-100 py-2 p-3 my-3" type="password" name="password"
+                                                        placeholder="Password" required>
+                                                    <input class="w-100 py-2 p-3" type="number" name="testHuman"
+                                                        placeholder="4 + 4 ?" required>
+                                                    <button type="submit"
+                                                        class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Login
+                                                        Now</button>
+                                                    <a href="#" class="showRecoverForm btn fit m-auto d-block">Forgot
+                                                        your
+                                                        password? Get help</a>
+                                                    <a href="#" class="showRegisterForm btn fit m-auto d-block">Not
+                                                        registered? Create an
+                                                        account</a>
+                                                </form>
+                                            </div>
+                                            <!-- Register Form -->
+                                            <div
+                                                class="registerForm position-absolute w-100 h-100 z-n1 bg-white top-0 px-4 start-0">
+                                                <h1 class="modal-title text-center mb-5 text-black fs-3">Registration
+                                                    from
+                                                </h1>
+                                                <form action="#" method="post">
+                                                    <input class="w-100 py-2 p-3 mb-3" type="text" name="username"
+                                                        placeholder="Username" required>
+                                                    <input class="w-100 py-2 p-3" type="email" name="email"
+                                                        placeholder="Your Email" required>
+                                                    <input class="w-100 py-2 p-3 my-3" type="password" name="password"
+                                                        placeholder="Password" required>
+                                                    <input class="w-100 py-2 p-3" type="number" name="testHuman"
+                                                        placeholder="8 + 6 ?" required>
+                                                    <button type="submit"
+                                                        class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Signup
+                                                        Now</button>
+                                                    <a href="#" class="showLoginForm btn fit m-auto d-block">Already
+                                                        registered? Sign In</a>
+                                                </form>
+                                            </div>
+                                            <!-- Recovery Form -->
+                                            <div
+                                                class="recoveryForm position-absolute w-100 h-100 z-n1 bg-white top-0 px-4 start-0">
+                                                <h1 class="modal-title text-center mb-5 text-black fs-3">Password
+                                                    recovery!
+                                                </h1>
+                                                <form action="#" method="post">
+                                                    <input class="w-100 py-2 p-3" type="email" name="email"
+                                                        placeholder="Your Email" required>
+                                                    <input class="w-100 py-2 p-3 mt-3" type="number" name="testHuman"
+                                                        placeholder="10 + 7 ?" required>
+                                                    <button type="submit"
+                                                        class="loginBtn rounded-0 py-2 p-3 my-4 w-100 btn">Send my
+                                                        password</button>
+                                                    <a href="#" class="showLoginForm btn fit m-auto d-block">Already
+                                                        registered? Sign In</a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="social-links ms-md-auto">
+                        <a href="#" class="text-decoration-none fs-5">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none fs-5">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none fs-5">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none fs-5">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none fs-5">
+                            <i class="fa-brands fa-skype"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-white shadow">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/logo-business-classic.png" alt="Logo" class="w-100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse rounded-3 bg-white" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-flex" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown mx-lg-2">
+                            <a class="nav-link d-lg-flex mx-lg-4 dropdown-toggle" href="about.html" role="button"
+                                aria-expanded="false">
+                                About
+                            </a>
+                            <ul class="dropdown-menu bg-color">
+                                <li><a class="dropdown-item text-white" href="#">Submenu 1</a></li>
+                                <li><a class="dropdown-item text-white" href="#">Submenu 2</a></li>
+                                <li><a class="dropdown-item text-white" href="#">Submenu 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-flex" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-flex mx-lg-4" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-flex" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-flex mx-lg-4" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-lg-flex active" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 d-lg-flex mx-lg-4" href="#">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-5 d-lg-flex" href="cart.html">
+                                <i class="fa-solid fa-bag-shopping position-relative">
+                                    <span id="numProducts">0</span>
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Links Section -->
+        <section class="linksSec py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <h4 class="col-8">Contact</h4>
+                    <div class="col-4 ms-auto fit">
+                        <a href="../index.html" class="text-decoration-none text-dark" title="Home Page">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                        <i class="fa-solid fa-angle-right mx-2"></i>
+                        <span class="text-decoration-none text-dark">Contact</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Go Up Button -->
+        <button class="goUpBtn btn position-fixed d-none">
+            <i class="fa-solid fa-angle-up"></i>
+        </button>
+    </header>
+    <!-- Main -->
+    <main>
+        <section class="container py-5">
+            <div class="row w-100">
+                <div class="col-lg-4 col-md-12">
+                    <div class="contact-left px-4">
+                        <div class="content mb-4">
+                            <div class="contact row">
+                                <div class="icon col-3">
+                                    <p><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="art col-9 ps-4"><small>Address:</small>
+                                    <p>121 King Street, NewYork</p>
+                                </div>
+                            </div>
+                            <div class="contact row">
+                                <div class="icon col-3">
+                                    <p><i class="fa-solid fa-phone"></i></p>
+                                </div>
+                                <div class="art col-9 ps-4">
+                                    <small>
+                                        Phone:</small>
+                                    <p>+1 (800) 333 44 55</p>
+                                </div>
+                            </div>
+                            <div class="contact row">
+                                <div class="icon col-3">
+                                    <p><i class="fa-solid fa-envelope"></i></p>
+                                </div>
+                                <div class="art col-9 ps-4">
+                                    <small>
+                                        Email:</small>
+                                    <p>business@yoursite.com</p>
+                                </div>
+                            </div>
+                            <div class="contact row">
+                                <div class="icon col-3">
+                                    <p><i class="fa-solid fa-fax"></i></p>
+                                </div>
+                                <div class="art col-9 ps-4">
+                                    <small>Fax:</small>
+                                    <p>+1 (800) 333 99 88</p>
+                                </div>
+                            </div>
+                            <div class="contact row">
+                                <div class="icon col-3">
+                                    <p><i class="fa-brands fa-skype"></i></p>
+                                </div>
+                                <div class="art col-9 ps-4">
+                                    <small>Skype:</small>
+                                    <p>@xtra_theme_live</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" w-100">
+                            <iframe class="location col-12"
+                                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d24193.901421143448!2d-74.005941!3d40.712784!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1725632698208!5m2!1sen!2sus"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 border-start">
+                    <div class="contact-right px-3">
+                        <h3>Send Us Your Message</h3>
+                        <p>
+                            I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet,
+                            consectetur
+                            adipiscing elit, Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed
+                            porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.
+                        </p>
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputName4" class="form-label">Your Name (required)</label>
+                                <input type="text" class="form-control frem" id="inputName4" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">
+                                    Your Email (required)</label>
+                                <input type="email" class="form-control frem" id="inputEmail4" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control frem" id="inputSubject" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputDepar" class="form-label">Departemant</label>
+                                <select id="inputDepar" class="form-select frem">
+                                    <option selected="Business Departemant">Business Departemant</option>
+                                    <option>Personal Departemant</option>
+                                    <option>Support Departemant</option>
+                                    <option>Others</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputMessage" class="form-label">Your Message</label>
+                                <textarea id="inputMessage" rows="8" maxlength="2000"
+                                    class="wpcf7-form-control w-100 wpcf7-textarea frem" aria-invalid="false"
+                                    name="your-message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer pt-5  ">
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+                    <div class="inner_footer">
+                        <div class="footer-title-logo">
+                            <div class="footer-logo mb-4">
+                                <img src="../images/logo-business-classic-footer.png" alt="Logo">
+                            </div>
+                        </div>
+                        <p class=" mb-3 text-start">
+                            A company is any entity that engages in business. Companies can be structured in different
+                            ways.
+                            For example, your company can be a sole proprietorship, a partnership, or a corporation.
+                        </p>
+                        <div class="linkList">
+                            <a href="#" class="iconLink facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="iconLink twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="iconLink instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="iconLink linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="iconLink youtube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+                    <div class="inner_footer">
+                        <div class="footer-title py-3">
+                            Recent Posts
+                        </div>
+                        <ul class=" list-unstyled footer-img-list">
+                            <li class="d-flex p-2">
+
+                                <div class="w-25 position-relative overflow-hidden">
+                                    <img src="../images/card1.jpg" alt="" class="w-100 ">
+                                    <div class="fotter_over d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                                <div class=" px-2 ps-3">
+                                    <h3><a href="" class="link_f">A Place of Silence</a></h3>
+                                    <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                                </div>
+                            </li>
+                            <li class="d-flex p-2">
+                                <div class="w-25 position-relative overflow-hidden">
+                                    <img src="../images/card2.jpg" alt="" class="w-100 ">
+                                    <div class="fotter_over d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                                <div class=" px-2 ps-3">
+                                    <h3><a href="" class="link_f">How to create a Logo</a></h3>
+                                    <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                                </div>
+                            </li>
+                            <li class="d-flex p-2">
+                                <div class="w-25 position-relative overflow-hidden">
+                                    <img src="../images/card3.jpg" alt="" class="w-100 ">
+                                    <div class="fotter_over d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                </div>
+                                <div class=" px-2 ps-3">
+                                    <h3><a href="" class="link_f">Principles of Coldness</a></h3>
+                                    <span> <i class="fa-regular fa-clock me-1"></i> 10 June 2024</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4 col-md-6 p-3 px-5">
+                    <div class="inner_footer">
+                        <div class="footer-title py-3">
+                            Business Hours
+                        </div>
+                        <p class="my-3">
+                            Our support available to help you <span class="mark-font-main">24 hours</span> a day, seven
+                            days
+                            a week, <span class="mark-font-main">365 days</span> in year.
+                        </p>
+                        <ul class=" list-unstyled footer-list">
+                            <li><span>Monday to Friday</span> <span>8AM - 4PM</span></li>
+                            <li><span>Saturday</span> <span>8AM - 1PM</span></li>
+                            <li><span>Sunday</span> <span>Support by Email</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="downfooter py-3 mt-5">
+            <div class="container">
+                <div class="row  ">
+                    <div class="col-md-6 col-sm-12 left-footer text-start">
+                        <p>© Copyright 2024, Designed by XTRA Theme</p>
+
+                    </div>
+                    <div class="col-md-6 col-sm-12 right-fotter d-flex align-content-center justify-content-end ">
+                        <div class="mybreadcrumb">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">About</a>
+                            <a href="">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
